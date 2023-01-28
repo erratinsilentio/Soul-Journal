@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { CiGlobe } from "react-icons/ci";
 
 export const Header = () => {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<string>("");
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const timeInterval = setInterval(() => {
       setDate(new Date().toLocaleString());
     }, 1000);
 
-    return () => clearInterval(intervalId);
+    return () => clearInterval(timeInterval);
   }, []);
 
   return (
