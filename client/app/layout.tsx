@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>
+      <body className="pt-7 pl-20">
         <Providers>
           <Header />
           <Navbar />
