@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.5",
+    "@nextui-org/react": "^1.0.0-beta.12",
     "@supabase/auth-ui-react": "^0.2.6",
     "@supabase/supabase-js": "^2.4.1",
     "@types/node": "18.11.18",
