@@ -8,12 +8,12 @@ import { useSelector } from "react-redux";
 
 export const Navbar = () => {
   const menuState = useSelector((state: RootState) => state.menu);
-
+  //ikony podswietlone kiedy jestsmy na danej podstronie
   return (
     <nav
       className={`${
-        menuState ? "translate-x-0" : "-translate-x-16"
-      } w-16 sm:translate-x-0 duration-200 flex flex-col py-16 items-center min-h-screen sm:w-20 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900`}
+        menuState ? "left-0" : "-left-20"
+      } fixed top-0 w-16 z-10 sm:left-0 duration-200 flex flex-col py-16 items-center min-h-screen sm:w-20 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900`}
     >
       <Link href="/">
         <CiStickyNote className="text-emerald-700 text-3xl duration-200 hover:text-4xl hover:text-emerald-500" />

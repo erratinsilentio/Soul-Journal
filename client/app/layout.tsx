@@ -11,13 +11,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="pt-7">
+      <body className="pt-7 sm:pl-20">
         <Providers>
           <Header />
-          <section className="flex flex-row justify-evenly">
-            <Navbar />
-            {children}
-          </section>
+          <Navbar />
+          {children}
         </Providers>
       </body>
     </html>
