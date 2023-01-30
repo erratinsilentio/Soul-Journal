@@ -1,5 +1,5 @@
 const Goals = () => {
-  return <p>goals</p>;
+  return <div className="w-full h-full border-2 border-black">goals</div>;
 };
 
 export default Goals;
