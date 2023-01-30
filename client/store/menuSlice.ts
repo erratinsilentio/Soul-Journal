@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type MenuState = true | false;
-const initialState: MenuState = true;
+const initialState: MenuState = false;
 
 export const menuSlice = createSlice({
   name: "orders",
