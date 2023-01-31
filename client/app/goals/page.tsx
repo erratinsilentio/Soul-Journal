@@ -1,5 +1,9 @@
 const Goals = () => {
-  return <div className="z-0 h-full w-full border-2 border-black">goals</div>;
+  return (
+    <main className="z-0 min-h-screen min-w-full bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900">
+      goals
+    </main>
+  );
 };
 
 export default Goals;

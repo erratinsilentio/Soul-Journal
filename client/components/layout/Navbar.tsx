@@ -17,7 +17,7 @@ export const Navbar = () => {
     <nav
       className={`${
         menuState ? "left-0" : "-left-20"
-      } fixed top-0 z-10 flex min-h-screen w-16 flex-col items-center bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900 py-16 duration-200 sm:left-0 sm:w-20`}
+      } fixed top-0 z-10 flex min-h-screen w-16 flex-col items-center bg-gradient-to-b from-zinc-800 via-zinc-800 to-zinc-900 py-16 shadow-2xl shadow-black duration-200 sm:left-0 sm:w-20`}
     >
       <Link href="/" onClick={() => setSelected("Home")}>
         <NavbarIcon icon={<CiStickyNote />} selected={selected} text="Home" />
