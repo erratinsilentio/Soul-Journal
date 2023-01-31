@@ -4,7 +4,7 @@ type MenuState = true | false;
 const initialState: MenuState = false;
 
 export const menuSlice = createSlice({
-  name: "orders",
+  name: "menu",
   initialState,
   reducers: {
     toggleMenu: (state) => {
