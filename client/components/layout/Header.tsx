@@ -2,7 +2,7 @@
 
 import { toggleMenu } from "@/store/menuSlice";
 import { useEffect, useState } from "react";
-import { CiGlobe, CiGrid2H } from "react-icons/ci";
+import { CiGlobe, CiGrid2H, CiLight, CiDark } from "react-icons/ci";
 import { useDispatch } from "react-redux";
 
 export const Header = () => {
@@ -25,6 +25,7 @@ export const Header = () => {
       />
       <div className="text-emerald-100"> {date} </div>
       <CiGlobe className="text-emerald-100 text-base ml-4" />
+      <CiDark className="text-emerald-100 text-base ml-3 cursor-pointer" />
     </header>
   );
 };
