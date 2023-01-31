@@ -19,7 +19,7 @@ export const NavbarIcon = ({
     >
       {icon}
       <span
-        className="absolute left-14 m-2 w-auto min-w-max origin-left scale-0 rounded-md
+        className="absolute -top-2 left-14 m-2 w-auto min-w-max origin-left scale-0 rounded-md
     bg-gray-900 p-2 
     text-xs font-bold 
     text-white shadow-md transition-all duration-100 group-hover:scale-100"
