@@ -1,6 +1,6 @@
 import "./globals.css";
-import { Header } from "../components/layout/Header";
-import { Navbar } from "../components/layout/Navbar";
+import { Header } from "../components/layout/header/Header";
+import { Navbar } from "../components/layout/navbar/Navbar";
 import Providers from "./providers";
 
 export default function RootLayout({
