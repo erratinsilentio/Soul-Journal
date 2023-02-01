@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="pt-7 sm:pl-20">
+      <body className="bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900 pt-7 sm:pl-20">
         <Providers>
           <Header />
           <Navbar />
