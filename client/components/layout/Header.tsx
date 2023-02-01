@@ -21,11 +21,11 @@ export const Header = () => {
     <header className="fixed left-0 top-0 z-40 flex h-7 w-screen items-center justify-end bg-gradient-to-r from-emerald-800 via-slate-700 to-emerald-900 px-6 text-xs shadow-emerald-700">
       <CiGrid2H
         onClick={() => dispatch(toggleMenu())}
-        className="fixed top-2 left-6 z-50 text-emerald-100 sm:hidden"
+        className="fixed top-2 left-6 z-50 text-blue-100 sm:hidden"
       />
-      <div className="text-emerald-100"> {date} </div>
-      <CiGlobe className="ml-4 text-base text-emerald-100" />
-      <CiDark className="ml-3 cursor-pointer text-base text-emerald-100" />
+      <div className="text-blue-100"> {date} </div>
+      <CiGlobe className="ml-4 text-base text-blue-100" />
+      <CiDark className="ml-3 cursor-pointer text-base text-blue-100" />
     </header>
   );
 };
