@@ -23,6 +23,30 @@ export default function Home() {
           className="textarea-bordered textarea min-w-full py-5"
           placeholder="your day..."
         ></textarea>
+        <p className="py-6 text-2xl text-zinc-200">👁️ Goals:</p>
+        <select className="select-bordered select w-full max-w-xs py-5">
+          <option disabled selected>
+            Who shot first?
+          </option>
+          <option>Han Solo</option>
+          <option>Greedo</option>
+        </select>
+        <p className="py-6 text-2xl text-zinc-200">🌱 I Appreciate...</p>
+        <textarea
+          className="textarea-bordered textarea min-w-full py-5"
+          placeholder="little things..."
+        ></textarea>
+        <p className="py-6 text-2xl text-zinc-200">🎭 I Forgive...</p>
+        <textarea
+          className="textarea-bordered textarea min-w-full py-5"
+          placeholder="myself / someone..."
+        ></textarea>
+        <p className="py-6 text-2xl text-zinc-200">🖤 I Love...</p>
+        <textarea
+          className="textarea-bordered textarea mb-6 min-w-full py-5"
+          placeholder="myself / someone / something for..."
+        ></textarea>
+        <button className="btn-wide btn bg-zinc-800">Save</button>{" "}
       </section>
     </main>
   );
