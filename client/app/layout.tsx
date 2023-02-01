@@ -2,6 +2,7 @@ import "./globals.css";
 import { Header } from "../components/layout/header/Header";
 import { Navbar } from "../components/layout/navbar/Navbar";
 import Providers from "./providers";
+import "@fontsource/anybody";
 
 export default function RootLayout({
   children,
@@ -11,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900 pt-7 sm:pl-20">
+      <body className="bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900 pt-7 font-sans sm:pl-20">
         <Providers>
           <Header />
           <Navbar />
