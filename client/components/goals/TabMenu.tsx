@@ -71,7 +71,7 @@ export const TabMenu = () => {
                   "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-emerald-500",
                   selected
                     ? "bg-zinc-700 shadow"
-                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                    : "text-blue-100 hover:bg-zinc-700 hover:text-white"
                 )
               }
             >
@@ -84,14 +84,14 @@ export const TabMenu = () => {
             <Tab.Panel
               key={idx}
               className={classNames(
-                "rounded-xl bg-zinc-600 bg-opacity-50 p-3 text-zinc-100 shadow-2xl shadow-black"
+                "rounded-xl bg-zinc-800 bg-opacity-50 p-3 text-zinc-100 shadow-2xl shadow-black"
               )}
             >
               <ul>
                 {posts.map((post) => (
                   <li
                     key={post.id}
-                    className="relative rounded-md p-3 hover:bg-gray-300 hover:text-zinc-900"
+                    className="relative rounded-md p-3 hover:bg-zinc-700"
                   >
                     <h3 className="text-sm font-medium leading-5">
                       {post.title}
