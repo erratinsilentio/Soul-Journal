@@ -5,8 +5,6 @@ import { useState } from "react";
 export const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,29 +23,16 @@ export const LoginForm = () => {
     }
   };
   return (
-    <form onSubmit={handleLogin}>
-      <label>email</label>
+    <form onSubmit={handleLogin} className="flex flex-col">
       <input
-        name="email"
-        id="email"
         type="text"
+        placeholder="email..."
+        className="input-bordered input-accent input my-5 w-full max-w-xs"
         onChange={(e) => setEmail(e.target.value)}
       />
-      <label>username</label>
-      <input
-        name="username"
-        id="username"
-        type="text"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <label>password</label>
-      <input
-        name="password"
-        id="password"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">submit</button>
+      <button type="submit" className="btn-wide btn">
+        Send Link
+      </button>{" "}
     </form>
   );
 };
