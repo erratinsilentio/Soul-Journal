@@ -1,7 +1,8 @@
 import { supabase } from "@/supabase";
 import { useEffect, useState } from "react";
+import { Session } from "@supabase/gotrue-js/src/lib/types";
 
-export const useUser = (session) => {
+export const useUser = (session: Session) => {
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState(null);
 

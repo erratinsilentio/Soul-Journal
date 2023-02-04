@@ -1,13 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Session } from "@supabase/gotrue-js/src/lib/types";
 
-type AuthState = true | false;
-const initialState = null;
+type AuthState = Session | null;
+const initialState: AuthState = null;
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setSession: (state, action: PayloadAction<any>) => {
+    setSession: (state, action: PayloadAction<Session>) => {
       state = action.payload;
       return state;
     },
