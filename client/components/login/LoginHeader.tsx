@@ -1,7 +1,6 @@
 export const LoginHeader = () => {
   return (
     <>
-      342kl
       <span className="mb-10 text-3xl font-semibold text-zinc-200">
         🌙 Welcome to Soul Journal
       </span>
