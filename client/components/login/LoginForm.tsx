@@ -1,38 +1,33 @@
 "use client";
 import { supabase } from "@/supabase";
-import { useState } from "react";
+import { loginActionFormik } from "@/utils/useFormik";
 
 export const LoginForm = () => {
-  const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
+  const handleLogin = async (mail: string) => {
     try {
-      setLoading(true);
-      const { error } = await supabase.auth.signInWithOtp({ email });
-      console.log(email);
+      const { error } = await supabase.auth.signInWithOtp({ email: mail });
       if (error) throw error;
-      alert("Check your email for the login link!");
     } catch (error) {
-      alert(error.error_description || error.message);
-    } finally {
-      console.log("success");
-      setLoading(false);
+      console.log(error.error_description || error.message);
     }
   };
+
+  const formik = loginActionFormik(handleLogin);
+
   return (
-    <form onSubmit={handleLogin} className="flex flex-col">
+    <form onSubmit={formik.handleSubmit} className="flex flex-col">
       <input
+        id="mail"
+        name="mail"
         type="text"
         placeholder="email..."
         className="input-bordered input-accent input my-5 w-full max-w-xs"
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={formik.handleChange}
+        value={formik.values["mail"]}
       />
       <button type="submit" className="btn-wide btn">
         Send Link
-      </button>{" "}
+      </button>
     </form>
   );
 };
