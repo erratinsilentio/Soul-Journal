@@ -3,12 +3,11 @@ import { DailyNoteForm } from "@/components/home/DailyNoteForm";
 import { setSession } from "@/store/authSlice";
 import { RootState } from "@/store/store";
 import { supabase } from "@/supabase";
-import { useUser } from "@/utils/useUser";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default async function Home() {
+export default function Home() {
   const router = useRouter();
   const dispatch = useDispatch();
   const currentSession = useSelector((state: RootState) => state.auth);

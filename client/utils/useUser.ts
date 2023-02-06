@@ -1,49 +1,49 @@
-import { supabase } from "@/supabase";
-import { useEffect, useState } from "react";
-import { Session } from "@supabase/gotrue-js/src/lib/types";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+// import { supabase } from "@/supabase";
+// import { useEffect, useState } from "react";
+// import { Session } from "@supabase/gotrue-js/src/lib/types";
+// import { useSelector } from "react-redux";
+// import { RootState } from "@/store/store";
 
-export const useUser = () => {
-  const [loading, setLoading] = useState(true);
-  const [id, setId] = useState(null);
-  const [email, setEmail] = useState(null);
+// export const useUser = () => {
+//   const [loading, setLoading] = useState(true);
+//   const [id, setId] = useState(null);
+//   const [email, setEmail] = useState(null);
 
-  const session = useSelector((state: RootState) => state.auth);
+//   const session = useSelector((state: RootState) => state.auth);
 
-  useEffect(() => {
-    getProfile();
-  }, [session]);
+//   useEffect(() => {
+//     getProfile();
+//   }, [session]);
 
-  const getProfile = async () => {
-    try {
-      setLoading(true);
-      const { user } = session;
+//   const getProfile = async () => {
+//     try {
+//       setLoading(true);
+//       const { user } = session;
 
-      console.log("aaa", user);
+//       console.log("aaa", user);
 
-      let { data, status, error } = await supabase.from("users").select("*");
+//       // let { data, status, error } = await supabase.from("users").select("*");
 
-      // let { data, error, status } = await supabase.from("users").select();
-      // .eq("id", user.id)
-      // .single();
+//       // let { data, error, status } = await supabase.from("users").select();
+//       // .eq("id", user.id)
+//       // .single();
 
-      if (error && status !== 406) {
-        throw error;
-      }
+//       if (error && status !== 406) {
+//         throw error;
+//       }
 
-      if (data) {
-        setId(data.id);
-        setEmail(data.email);
+//       if (data) {
+//         setId(data.id);
+//         setEmail(data.email);
 
-        console.log("iiiii", id, email);
+//         console.log("iiiii", id, email);
 
-        return data;
-      }
-    } catch (error) {
-      alert(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-};
+//         return data;
+//       }
+//     } catch (error) {
+//       alert(error.message);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+// };

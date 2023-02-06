@@ -1,14 +1,23 @@
 "use client";
 
 import { RootState } from "@/store/store";
+import { setDark, setLight, toggleTheme } from "@/store/themeSlice";
 import { CiLight, CiDark } from "react-icons/ci";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const ThemeButton = () => {
   const darkMode = useSelector((state: RootState) => state.theme);
+  const dispatch = useDispatch();
 
-  if (!darkMode)
-    return <CiLight className="ml-4 cursor-pointer text-base text-blue-100" />;
-
-  return <CiDark className="ml-4 cursor-pointer text-base text-blue-100" />;
+  return darkMode ? (
+    <CiDark
+      className="ml-4 cursor-pointer text-base text-blue-100"
+      onClick={() => dispatch(setLight())}
+    />
+  ) : (
+    <CiLight
+      className="ml-4 cursor-pointer text-base text-blue-100"
+      onClick={() => dispatch(setDark())}
+    />
+  );
 };

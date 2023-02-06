@@ -11,9 +11,17 @@ export const themeSlice = createSlice({
       state = !state;
       return state;
     },
+    setDark: (state) => {
+      state = true;
+      return state;
+    },
+    setLight: (state) => {
+      state = false;
+      return state;
+    },
   },
 });
 
-export const { toggleTheme } = themeSlice.actions;
+export const { toggleTheme, setDark, setLight } = themeSlice.actions;
 
 export default themeSlice.reducer;
