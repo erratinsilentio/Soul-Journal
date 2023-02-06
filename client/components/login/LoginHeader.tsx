@@ -1,10 +1,10 @@
 export const LoginHeader = () => {
   return (
     <>
-      <span className="mb-10 text-3xl font-semibold text-zinc-200">
-        🌙 Welcome to Soul Journal
+      <span className="mb-10 text-center text-2xl font-semibold leading-10 text-zinc-200 sm:text-left md:text-3xl">
+        Welcome to Soul Journal
       </span>
-      <span className="mb-6 text-2xl font-thin text-zinc-400">
+      <span className="mb-6 text-center text-xl font-thin leading-8 text-zinc-400 sm:text-left md:text-2xl">
         Type your email to receive a one time login link
       </span>
     </>
