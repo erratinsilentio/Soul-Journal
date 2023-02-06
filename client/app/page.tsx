@@ -3,11 +3,12 @@ import { DailyNoteForm } from "@/components/home/DailyNoteForm";
 import { setSession } from "@/store/authSlice";
 import { RootState } from "@/store/store";
 import { supabase } from "@/supabase";
+import { useUser } from "@/utils/useUser";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Home() {
+export default async function Home() {
   const router = useRouter();
   const dispatch = useDispatch();
   const currentSession = useSelector((state: RootState) => state.auth);
@@ -22,9 +23,8 @@ export default function Home() {
     });
   }, []);
 
-  // console.log("kkk", currentSession);
-  // if (!currentSession) router.push("/login");
-  // if (currentSession) console.log("lklkl");
+  console.log("kkk", currentSession);
+  if (!currentSession) router.push("/login");
 
   return (
     <main className="z-0 min-h-screen min-w-full p-10">

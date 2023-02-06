@@ -1,10 +1,15 @@
 import { supabase } from "@/supabase";
 import { useEffect, useState } from "react";
 import { Session } from "@supabase/gotrue-js/src/lib/types";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
-export const useUser = (session: Session) => {
+export const useUser = () => {
   const [loading, setLoading] = useState(true);
-  const [username, setUsername] = useState(null);
+  const [id, setId] = useState(null);
+  const [email, setEmail] = useState(null);
+
+  const session = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
     getProfile();
@@ -15,18 +20,24 @@ export const useUser = (session: Session) => {
       setLoading(true);
       const { user } = session;
 
-      let { data, error, status } = await supabase
-        .from("profiles")
-        .select(`username`)
-        .eq("id", user.id)
-        .single();
+      console.log("aaa", user);
+
+      let { data, status, error } = await supabase.from("users").select("*");
+
+      // let { data, error, status } = await supabase.from("users").select();
+      // .eq("id", user.id)
+      // .single();
 
       if (error && status !== 406) {
         throw error;
       }
 
       if (data) {
-        setUsername(data.username);
+        setId(data.id);
+        setEmail(data.email);
+
+        console.log("iiiii", id, email);
+
         return data;
       }
     } catch (error) {

@@ -1,6 +1,5 @@
 "use client";
 export const ErrorAlert = () => {
-  console.log(text);
   return (
     <div className="alert alert-error fixed bottom-10 left-1/2 z-50 w-80 -translate-x-1/2 shadow-lg">
       <div>
