@@ -10,7 +10,7 @@ export const DailyNoteForm = () => {
     <div className={isDark ? "light" : "dark"}>
       <form
         className="min-h-screen rounded-xl bg-opacity-50 bg-gradient-to-b from-zinc-800 via-zinc-800 to-zinc-900 p-16 shadow-2xl
-    shadow-black dark:from-rose-200 dark:via-rose-200 dark:to-rose-300
+    shadow-black dark:from-emerald-400 dark:via-emerald-400 dark:to-emerald-500
     "
       >
         <p className="mb-6 text-3xl text-zinc-200 dark:text-zinc-800">

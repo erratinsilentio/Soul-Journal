@@ -2,8 +2,9 @@ import "./globals.css";
 import { Header } from "../components/layout/header/Header";
 import { Navbar } from "../components/layout/navbar/Navbar";
 import Providers from "./providers";
-import "@fontsource/anybody";
 import { Notification } from "@/components/notification/Notification";
+import "@fontsource/anybody";
+import "@fontsource/coda";
 
 export default function RootLayout({
   children,

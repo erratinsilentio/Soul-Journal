@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/anybody": "^4.5.5",
+    "@fontsource/coda": "^4.5.9",
     "@fontsource/open-sans": "^4.5.14",
     "@headlessui/react": "^1.7.8",
     "@next/font": "13.1.5",

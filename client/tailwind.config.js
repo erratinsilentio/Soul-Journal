@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ["Anybody", "ui-sans-serif", "system-ui"],
+      sans: ["Anybody", "Coda", "ui-sans-serif", "system-ui"],
     },
   },
   darkMode: ["class"],
