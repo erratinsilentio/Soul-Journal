@@ -1,4 +1,6 @@
+"use client";
 export const ErrorAlert = () => {
+  console.log(text);
   return (
     <div className="alert alert-error fixed bottom-10 left-1/2 z-50 w-80 -translate-x-1/2 shadow-lg">
       <div>
@@ -15,7 +17,7 @@ export const ErrorAlert = () => {
             d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span>Error! Task failed successfully.</span>
+        <span>"Error! Task failed successfully."</span>
       </div>
     </div>
   );
