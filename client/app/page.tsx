@@ -22,7 +22,9 @@ export default function Home() {
     });
   }, []);
 
-  if (!currentSession) router.push("/login");
+  // console.log("kkk", currentSession);
+  // if (!currentSession) router.push("/login");
+  // if (currentSession) console.log("lklkl");
 
   return (
     <main className="z-0 min-h-screen min-w-full p-10">

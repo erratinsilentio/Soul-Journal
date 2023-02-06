@@ -7,16 +7,18 @@ import { CiStickyNote, CiSettings, CiRead, CiCalendar } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import { NavbarIcon } from "./Icon";
 
-export type SelectedPath = "Home" | "Goals" | "Archive" | "Settings";
+export type SelectedPath = "Home" | "Goals" | "Archive" | "Settings" | null;
 
 export const Navbar = () => {
   const menuState = useSelector((state: RootState) => state.menu);
-  const [selected, setSelected] = useState<SelectedPath>("Home");
+  const authState = useSelector((state: RootState) => state.auth);
+
+  const [selected, setSelected] = useState<SelectedPath>(null);
 
   return (
     <nav
-      className={`${
-        menuState ? "left-0" : "-left-20"
+      className={`${menuState ? "left-0" : "-left-20"} ${
+        authState ? "" : "pointer-events-none"
       } fixed top-0 z-10 flex min-h-screen w-16 flex-col items-center bg-gradient-to-b from-zinc-800 via-zinc-800 to-zinc-900 py-16 shadow-2xl shadow-black duration-200 sm:left-0 sm:w-20`}
     >
       <Link href="/" onClick={() => setSelected("Home")}>
