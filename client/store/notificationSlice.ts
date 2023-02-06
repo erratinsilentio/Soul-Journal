@@ -9,21 +9,19 @@ export const notificationSlice = createSlice({
   reducers: {
     setSuccess: (state) => {
       state = "Success";
-      setTimeout(() => {
-        state = null;
-      }, 3000);
       return state;
     },
     setError: (state) => {
       state = "Error";
-      setTimeout(() => {
-        state = null;
-      }, 3000);
+      return state;
+    },
+    setNull: (state) => {
+      state = null;
       return state;
     },
   },
 });
 
-export const { setSuccess, setError } = notificationSlice.actions;
+export const { setSuccess, setError, setNull } = notificationSlice.actions;
 
 export default notificationSlice.reducer;

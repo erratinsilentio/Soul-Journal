@@ -3,6 +3,7 @@ import { Header } from "../components/layout/header/Header";
 import { Navbar } from "../components/layout/navbar/Navbar";
 import Providers from "./providers";
 import "@fontsource/anybody";
+import { Notification } from "@/components/notification/Notification";
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
           <Header />
           <Navbar />
           {children}
+          <Notification />
         </Providers>
       </body>
     </html>
