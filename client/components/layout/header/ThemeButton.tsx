@@ -1,7 +1,7 @@
 "use client";
 
 import { RootState } from "@/store/store";
-import { setDark, setLight, toggleTheme } from "@/store/themeSlice";
+import { setDark, setLight } from "@/store/themeSlice";
 import { CiLight, CiDark } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 
