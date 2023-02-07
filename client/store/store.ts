@@ -3,6 +3,7 @@ import menuReducer from "./menuSlice";
 import themeReducer from "./themeSlice";
 import authReducer from "./authSlice";
 import notificationReducer from "./notificationSlice";
+import modalReducer from "./modalSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     theme: themeReducer,
     auth: authReducer,
     notification: notificationReducer,
+    modal: modalReducer,
   },
 });
 
