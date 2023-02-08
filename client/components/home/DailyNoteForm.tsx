@@ -13,7 +13,7 @@ export const DailyNoteForm = () => {
     shadow-black dark:from-emerald-400 dark:via-emerald-400 dark:to-emerald-500
     "
       >
-        <p className="mb-6 text-3xl text-zinc-200 dark:text-zinc-800">
+        <p className="mb-6 text-3xl font-medium text-zinc-200 dark:text-zinc-800">
           Daily note
         </p>
         <TextSection text="🪬 Meditation:" placeholder="meditation..." />

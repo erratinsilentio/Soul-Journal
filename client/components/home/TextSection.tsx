@@ -10,9 +10,11 @@ export const TextSection = ({
 }) => {
   return (
     <>
-      <p className="py-6 text-2xl text-zinc-200 dark:text-zinc-700">{text}</p>
+      <p className="py-6 text-2xl font-extralight text-zinc-200 dark:text-zinc-700">
+        {text}
+      </p>
       <textarea
-        className="textarea-bordered textarea min-w-full py-5 text-zinc-200 dark:bg-rose-50 dark:text-zinc-700"
+        className="textarea-bordered textarea min-w-full px-7 py-5 font-thin text-zinc-200 dark:bg-rose-50 dark:text-zinc-700"
         placeholder={placeholder}
       ></textarea>
     </>

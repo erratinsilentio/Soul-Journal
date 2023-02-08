@@ -9,6 +9,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       sans: ["Anybody", "Coda", "ui-sans-serif", "system-ui"],
+      montserrat: ["Montserrat"],
     },
   },
   darkMode: ["class"],
