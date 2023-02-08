@@ -8,6 +8,7 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
   const dispatch = useDispatch();
 
   const [fullscreen, setFullscreen] = useState<boolean>(false);
+  const [minimized, setMinimized] = useState<boolean>(false);
 
   return (
     <main
@@ -18,6 +19,7 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
           ? "top-0 left-0 h-screen w-screen"
           : "h-5/6 w-5/6 sm:h-4/6 sm:w-4/6"
       }
+      ${minimized && "bottom-0 scale-[0.25]"}
       fixed z-50 rounded-md bg-zinc-700 bg-opacity-40 shadow-2xl shadow-black backdrop-blur-md duration-300`}
     >
       <div className="flex h-5 min-w-full items-center justify-start rounded-t-md bg-zinc-500 px-4">
@@ -27,14 +29,19 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
         />
         <button
           className="mx-2 h-3 w-3 rounded-full bg-yellow-500 leading-4 text-yellow-500 hover:text-zinc-700"
-          onClick={() => dispatch(closeGoalModal())}
+          onClick={() => setMinimized(!minimized)}
         />
         <button
           className="h-3 w-3 rounded-full bg-green-500 leading-4 text-green-500 hover:text-zinc-700"
           onClick={() => setFullscreen(!fullscreen)}
         />
       </div>
-      <section className="flex flex-col py-8 px-14">{children}</section>
+      <section
+        className="flex flex-col py-8 px-14"
+        onClick={() => setMinimized(false)}
+      >
+        {children}
+      </section>
     </main>
   );
 };

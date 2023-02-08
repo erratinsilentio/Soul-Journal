@@ -14,7 +14,7 @@ export const AddGoalModal = () => {
         className="textarea-accent textarea my-2 bg-zinc-800 font-light"
         placeholder="Description"
       ></textarea>
-      <label className="mt-2 font-normal text-zinc-300">Deadline:</label>
+      <label className="mt-2 font-normal italic text-zinc-300">Deadline:</label>
       <input
         type="date"
         className="my-2 rounded-md border-accent bg-zinc-800 font-light text-zinc-500"
