@@ -26,7 +26,7 @@ export default function Home() {
   if (!currentSession) router.push("/login");
 
   return (
-    <main className="z-0 min-h-screen min-w-full p-10">
+    <main className="z-0 min-h-screen min-w-full p-5 sm:p-10">
       <DailyNoteForm />
     </main>
   );

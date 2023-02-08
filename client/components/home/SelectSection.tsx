@@ -13,7 +13,7 @@ export const SelectSection = ({
         {text}
       </p>
       <section className="flex flex-col">
-        <select className="select-bordered select w-full max-w-xs py-5 dark:bg-rose-50 dark:text-zinc-700">
+        <select className="select-bordered select w-full max-w-xs py-5 italic dark:bg-rose-50 dark:text-zinc-700">
           <option disabled selected>
             What were you working on today?
           </option>
@@ -23,7 +23,7 @@ export const SelectSection = ({
         <input
           type="number"
           placeholder="Hours of work..."
-          className="input-bordered input my-4 w-full max-w-xs font-thin dark:bg-rose-50 dark:text-zinc-700"
+          className="input-bordered input my-4 w-full max-w-xs font-thin italic dark:bg-rose-50 dark:text-zinc-700"
         />
       </section>
     </>

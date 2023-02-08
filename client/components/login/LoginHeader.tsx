@@ -1,7 +1,7 @@
 export const LoginHeader = () => {
   return (
     <>
-      <span className="mb-10 text-center text-2xl font-semibold leading-10 text-zinc-200 sm:text-left md:text-3xl">
+      <span className="mb-10 text-center text-2xl font-medium leading-10 text-zinc-200 sm:text-left md:text-3xl">
         Welcome to Soul Journal
       </span>
       <span className="mb-6 text-center text-xl font-thin leading-8 text-zinc-400 sm:text-left md:text-2xl">

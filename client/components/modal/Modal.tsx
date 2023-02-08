@@ -19,7 +19,7 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
           ? "top-0 left-0 h-screen w-screen"
           : "h-5/6 w-5/6 sm:h-4/6 sm:w-4/6"
       }
-      ${minimized && "bottom-0 scale-[0.25]"}
+      ${minimized && "-bottom-28 scale-[0.25]"}
       fixed z-50 rounded-md bg-zinc-700 bg-opacity-40 shadow-2xl shadow-black backdrop-blur-md duration-300`}
     >
       <div className="flex h-5 min-w-full items-center justify-start rounded-t-md bg-zinc-500 px-4">

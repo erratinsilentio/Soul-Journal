@@ -14,7 +14,7 @@ export const TextSection = ({
         {text}
       </p>
       <textarea
-        className="textarea-bordered textarea min-w-full px-7 py-5 font-thin text-zinc-200 dark:bg-rose-50 dark:text-zinc-700"
+        className="textarea-bordered textarea min-w-full px-7 py-5 font-thin italic text-zinc-200 dark:bg-rose-50 dark:text-zinc-700"
         placeholder={placeholder}
       ></textarea>
     </>
