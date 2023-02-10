@@ -7,9 +7,7 @@ export const Hamburger = () => {
   const dispatch = useDispatch();
 
   return (
-    <label className="swap-rotate swap fixed top-[-2px] left-4 z-50 scale-50 text-blue-100 sm:hidden">
-      <input type="checkbox" />
-
+    <label className="swap swap-rotate fixed top-[-2px] left-4 z-50 scale-50 text-blue-100 sm:hidden">
       <svg
         className="swap-off fill-current"
         xmlns="http://www.w3.org/2000/svg"
