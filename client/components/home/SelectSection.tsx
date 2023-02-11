@@ -3,9 +3,15 @@
 export const SelectSection = ({
   text,
   options,
+  name,
+  value,
+  onChange,
 }: {
   text: string;
   options: string;
+  name: string;
+  value: any;
+  onChange: any;
 }) => {
   return (
     <>
@@ -13,7 +19,13 @@ export const SelectSection = ({
         {text}
       </p>
       <section className="flex flex-col">
-        <select className="select-bordered select w-full max-w-xs py-5 italic dark:bg-rose-50 dark:text-zinc-700">
+        <select
+          id={name}
+          name={name}
+          value={value}
+          onChange={onChange}
+          className="select-bordered select w-full max-w-xs py-5 italic dark:bg-rose-50 dark:text-zinc-700"
+        >
           <option disabled selected>
             What were you working on today?
           </option>

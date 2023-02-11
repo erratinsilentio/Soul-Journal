@@ -1,9 +1,10 @@
 import { setSession } from "@/store/authSlice";
-import { setUser } from "@/store/userSlice";
+import { setGoals, setNotepad, setUser } from "@/store/userSlice";
 import { supabase } from "@/supabase";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { getGoals, getNotepad, getUser } from "./userActions";
 
 export const ProtectedWrapper = ({
   children,
@@ -17,24 +18,14 @@ export const ProtectedWrapper = ({
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
         dispatch(setSession(session));
-        getUser(session.user.id);
+        getUser(session.user.id).then((data) => dispatch(setUser(data)));
+        getNotepad(session.user.id).then((data) => dispatch(setNotepad(data)));
+        getGoals(session.user.id).then((data) => dispatch(setGoals(data)));
       } else {
         router.push("/login");
       }
     });
   }, []);
-
-  const getUser = async (id: string) => {
-    let { data: user, error } = await supabase
-      .from("users")
-      .select()
-      .eq("id", id)
-      .single();
-
-    dispatch(setUser(user));
-    console.log(user);
-    return user;
-  };
 
   return <>{children}</>;
 };

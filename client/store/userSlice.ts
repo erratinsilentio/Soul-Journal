@@ -18,18 +18,12 @@ export const userSlice = createSlice({
   reducers: {
     setUser: (state, action: PayloadAction<Session>) => {
       state.user = action.payload;
-      console.log(state.user);
-      return state.user;
     },
     setNotepad: (state, action: PayloadAction<Session>) => {
       state.notepad = action.payload;
-      console.log(state.notepad);
-      return state.notepad;
     },
     setGoals: (state, action: PayloadAction<Session>) => {
       state.goals = action.payload;
-      console.log(state.goals);
-      return state.goals;
     },
   },
 });

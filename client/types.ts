@@ -1,32 +1,37 @@
 export interface User {
-  id: string;
-  username: string;
+  id?: string;
   email: string;
-  password: string;
-  notes: Note[];
-  goals: Goal[];
-  streak: number;
+  streak?: number;
+}
+
+export interface Notepad {
+  id: string;
+  user_id: string;
 }
 
 export interface Note {
-  id: string;
-  user: User;
-  date: string;
+  id?: string;
+  date?: string;
   meditation: string;
   dream: string;
   exercise: string;
   awake: string;
-  goals: Goal[];
+  goals: any;
   gratitude: string;
   forgiveness: string;
   love: string;
+  notepad_id?: string;
+}
+
+export interface Goals {
+  id: string;
+  user_id: string;
 }
 
 export interface Goal {
-  id: string;
-  user: User;
+  id?: string;
   title: string;
   description: string;
   deadline: string;
-  notes: Note;
+  goals_id?: string;
 }
