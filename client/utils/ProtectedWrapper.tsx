@@ -1,4 +1,5 @@
 import { setSession } from "@/store/authSlice";
+import { setUser } from "@/store/userSlice";
 import { supabase } from "@/supabase";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
@@ -16,11 +17,24 @@ export const ProtectedWrapper = ({
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
         dispatch(setSession(session));
+        getUser(session.user.id);
       } else {
         router.push("/login");
       }
     });
   }, []);
+
+  const getUser = async (id: string) => {
+    let { data: user, error } = await supabase
+      .from("users")
+      .select()
+      .eq("id", id)
+      .single();
+
+    dispatch(setUser(user));
+    console.log(user);
+    return user;
+  };
 
   return <>{children}</>;
 };
