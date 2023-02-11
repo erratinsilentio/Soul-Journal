@@ -1,5 +1,6 @@
 import { supabase } from "@/supabase";
 import { Note } from "@/types";
+import { useSelector } from "react-redux";
 import { getPostgreSQLDate } from "./getDate";
 
 export const checkIfDailyNoteExists = async (currentNotepadID: any) => {
@@ -24,9 +25,11 @@ export const addNote = async (note: Note, dailyNote: Note) => {
     const { data: updatedNote, error } = await supabase
       .from("note")
       .update([note])
+      .eq("id", dailyNote.id)
       .select()
       .single();
 
+    console.log(error, updatedNote);
     return updatedNote;
   }
 

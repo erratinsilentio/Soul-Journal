@@ -10,10 +10,10 @@ export const DailyNoteForm = ({
   isDark,
 }: {
   dailyNote: Note;
-  notepad: Notepad;
+  notepad: string;
   isDark: boolean;
 }) => {
-  const formik = noteActionFormik(dailyNote || {}, notepad?.id);
+  const formik = noteActionFormik(dailyNote || {}, notepad);
 
   return (
     <div className={isDark ? "light" : "dark"}>

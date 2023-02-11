@@ -1,3 +1,4 @@
+"use client";
 import { useFormik } from "formik";
 import { getPostgreSQLDate } from "./getDate";
 import { addNote } from "./noteActions";
@@ -24,9 +25,7 @@ export const loginActionFormik = (
   return formik;
 };
 
-export const noteActionFormik = (dailyNote: any, currentNotepad: any) => {
-  console.log(dailyNote.meditation);
-
+export const noteActionFormik = (dailyNote: any, notepadID: any) => {
   const formik = useFormik({
     initialValues: {
       date: getPostgreSQLDate(),
@@ -38,10 +37,11 @@ export const noteActionFormik = (dailyNote: any, currentNotepad: any) => {
       gratitude: dailyNote.gratitude ?? "",
       forgiveness: dailyNote.forgiveness ?? "",
       love: dailyNote.love ?? "",
-      notepad_id: currentNotepad ?? "",
+      notepad_id: notepadID,
     },
     // validationSchema: noteValidationSchema,
     onSubmit: async (values) => {
+      console.log(notepadID);
       addNote(values, dailyNote);
     },
   });
