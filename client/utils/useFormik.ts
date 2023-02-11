@@ -58,12 +58,12 @@ export const addGoalFormik = (goalpad: any) => {
       title: "",
       description: "",
       deadline: "",
-      goalpad_id: goalpad?.id,
+      goalpad_id: goalpad,
     },
     validationSchema: goalValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      // addGoal(values);
+      addGoal(values);
     },
   });
 
