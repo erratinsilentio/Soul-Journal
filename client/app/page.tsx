@@ -5,8 +5,8 @@ import { checkIfDailyNoteExists } from "@/utils/noteActions";
 import { ProtectedWrapper } from "@/utils/ProtectedWrapper";
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
-import { RotatingLines } from "react-loader-spinner";
 import { Error } from "@/components/error/Error";
+import { Loading } from "@/components/loading/Loading";
 
 export default function Home() {
   const isDark = useSelector((state: RootState) => state.theme);
@@ -20,20 +20,7 @@ export default function Home() {
     checkIfDailyNoteExists(currentNotepad?.id)
   );
 
-  if (isLoading) {
-    return (
-      <main className="items z-0 flex min-h-screen min-w-full justify-center p-5 sm:p-10">
-        <RotatingLines
-          strokeColor="#047857"
-          strokeWidth="1"
-          animationDuration="0.75"
-          width="68"
-          visible={true}
-        />
-      </main>
-    );
-  }
-
+  if (isLoading) return <Loading />;
   if (error) return <Error />;
 
   console.log("notepad", currentNotepad);
