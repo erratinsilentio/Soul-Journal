@@ -23,8 +23,6 @@ export default function Home() {
   if (isLoading) return <Loading />;
   if (error) return <Error />;
 
-  console.log("notepad", currentNotepad);
-
   return (
     <ProtectedWrapper>
       <main className="z-0 min-h-screen min-w-full p-5 sm:p-10">

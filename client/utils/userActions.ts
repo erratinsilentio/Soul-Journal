@@ -45,7 +45,7 @@ export const getGoals = async (id: string) => {
       .select()
       .single();
 
-    console.log("goal", data, error);
+    console.log("goalpad", data, error);
 
     return data;
   }
