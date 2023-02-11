@@ -12,9 +12,9 @@ export const GoogleButton = () => {
   return (
     <button
       onClick={signInWithGoogle}
-      className="btn-wide btn relative text-xs"
+      className="btn-success btn-wide btn relative text-xs"
     >
-      <SiGoogle className="text-md" />
+      <SiGoogle className="text-lg" />
     </button>
   );
 };

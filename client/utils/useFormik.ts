@@ -1,6 +1,9 @@
 "use client";
+import { Goal, Note } from "@/types";
 import { useFormik } from "formik";
 import { getPostgreSQLDate } from "./getDate";
+import { addGoal, updateGoal } from "./goalActions";
+import { goalValidationSchema } from "./goalSchema";
 import { addNote } from "./noteActions";
 import { loginValidationSchema } from "./userSchema";
 
@@ -25,7 +28,7 @@ export const loginActionFormik = (
   return formik;
 };
 
-export const noteActionFormik = (dailyNote: any, notepadID: any) => {
+export const noteActionFormik = (dailyNote: Note, notepadID: string) => {
   const formik = useFormik({
     initialValues: {
       date: getPostgreSQLDate(),
@@ -43,6 +46,42 @@ export const noteActionFormik = (dailyNote: any, notepadID: any) => {
     onSubmit: async (values) => {
       console.log(notepadID);
       addNote(values, dailyNote);
+    },
+  });
+
+  return formik;
+};
+
+export const addGoalFormik = (goalpadID: string) => {
+  const formik = useFormik({
+    initialValues: {
+      title: "",
+      description: "",
+      deadline: "",
+      goalpad_id: goalpadID,
+    },
+    validationSchema: goalValidationSchema,
+    onSubmit: async (values) => {
+      console.log(values);
+      addGoal(values);
+    },
+  });
+
+  return formik;
+};
+
+export const updateGoalFormik = (oldGoal: Goal, goalpadID: string) => {
+  const formik = useFormik({
+    initialValues: {
+      title: oldGoal.title,
+      description: oldGoal.description,
+      deadline: oldGoal.deadline,
+      goalpad_id: goalpadID,
+    },
+    validationSchema: goalValidationSchema,
+    onSubmit: async (values) => {
+      console.log(values);
+      updateGoal(oldGoal, values);
     },
   });
 

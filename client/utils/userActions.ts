@@ -33,14 +33,14 @@ export const getNotepad = async (id: string) => {
 
 export const getGoals = async (id: string) => {
   let { data: goals, error } = await supabase
-    .from("goals")
+    .from("goalpad")
     .select()
     .eq("user_id", id)
     .single();
 
   if (!goals) {
     const { data, error } = await supabase
-      .from("goals")
+      .from("goalpad")
       .insert([{ user_id: id }])
       .select()
       .single();
