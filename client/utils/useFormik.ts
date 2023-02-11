@@ -52,18 +52,18 @@ export const noteActionFormik = (dailyNote: Note, notepadID: string) => {
   return formik;
 };
 
-export const addGoalFormik = (goalpadID: string) => {
+export const addGoalFormik = (goalpad: any) => {
   const formik = useFormik({
     initialValues: {
       title: "",
       description: "",
       deadline: "",
-      goalpad_id: goalpadID,
+      goalpad_id: goalpad?.id,
     },
     validationSchema: goalValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      addGoal(values);
+      // addGoal(values);
     },
   });
 

@@ -36,12 +36,7 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
           onClick={() => setFullscreen(!fullscreen)}
         />
       </div>
-      <section
-        className="flex flex-col py-8 px-14"
-        onClick={() => setMinimized(false)}
-      >
-        {children}
-      </section>
+      <section onClick={() => setMinimized(false)}>{children}</section>
     </main>
   );
 };
