@@ -6,6 +6,7 @@ import { ProtectedWrapper } from "@/utils/ProtectedWrapper";
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { RotatingLines } from "react-loader-spinner";
+import { Error } from "@/components/error/Error";
 
 export default function Home() {
   const isDark = useSelector((state: RootState) => state.theme);
@@ -24,16 +25,16 @@ export default function Home() {
       <main className="items z-0 flex min-h-screen min-w-full justify-center p-5 sm:p-10">
         <RotatingLines
           strokeColor="#047857"
-          strokeWidth="5"
+          strokeWidth="1"
           animationDuration="0.75"
-          width="96"
+          width="68"
           visible={true}
         />
       </main>
     );
   }
 
-  if (error) return <p>An error occurred:</p>;
+  if (error) return <Error />;
 
   console.log("notepad", currentNotepad);
 

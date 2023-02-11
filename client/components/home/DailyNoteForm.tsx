@@ -1,5 +1,5 @@
 "use client";
-import { Note, Notepad } from "@/types";
+import { Note } from "@/types";
 import { noteActionFormik } from "@/utils/useFormik";
 import { SelectSection } from "./SelectSection";
 import { TextSection } from "./TextSection";

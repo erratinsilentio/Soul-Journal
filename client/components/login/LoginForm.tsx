@@ -1,9 +1,8 @@
 "use client";
 import { setError, setSuccess } from "@/store/notificationSlice";
-import { RootState } from "@/store/store";
 import { supabase } from "@/supabase";
 import { loginActionFormik } from "@/utils/useFormik";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -22,19 +21,22 @@ export const LoginForm = () => {
   const formik = loginActionFormik(handleLogin);
 
   return (
-    <form onSubmit={formik.handleSubmit} className="flex flex-col">
-      <input
-        id="mail"
-        name="mail"
-        type="text"
-        placeholder="email..."
-        className="input-bordered input-accent input my-5 w-full max-w-xs"
-        onChange={formik.handleChange}
-        value={formik.values["mail"]}
-      />
-      <button type="submit" className="btn-wide btn">
-        Send Link
-      </button>
-    </form>
+    <>
+      <form onSubmit={formik.handleSubmit} className="flex flex-col">
+        <input
+          id="mail"
+          name="mail"
+          type="text"
+          placeholder="email..."
+          className="input-bordered input-accent input my-5 w-full max-w-xs"
+          onChange={formik.handleChange}
+          value={formik.values["mail"]}
+        />
+        <button type="submit" className="btn-wide btn">
+          Send Link
+        </button>
+        <p className="btn-wide my-2 flex justify-center text-xs">OR</p>
+      </form>
+    </>
   );
 };

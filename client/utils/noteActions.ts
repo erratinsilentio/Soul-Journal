@@ -1,6 +1,5 @@
 import { supabase } from "@/supabase";
 import { Note } from "@/types";
-import { useSelector } from "react-redux";
 import { getPostgreSQLDate } from "./getDate";
 
 export const checkIfDailyNoteExists = async (currentNotepadID: any) => {
@@ -13,7 +12,7 @@ export const checkIfDailyNoteExists = async (currentNotepadID: any) => {
     .eq("date", currentDate)
     .single();
 
-  console.log("daily note: ", data, error);
+  console.log("get daily note: ", data, error);
 
   return data;
 };

@@ -20,10 +20,11 @@ export const getNotepad = async (id: string) => {
   if (!notepad) {
     const { data, error } = await supabase
       .from("notepad")
-      .insert([{ user_id: id, note_id: null }])
+      .insert([{ user_id: id }])
       .select()
       .single();
 
+    console.log("notepad", data, error);
     return data;
   }
 
@@ -40,9 +41,11 @@ export const getGoals = async (id: string) => {
   if (!goals) {
     const { data, error } = await supabase
       .from("goals")
-      .insert([{ user_id: id, goal_id: null }])
+      .insert([{ user_id: id }])
       .select()
       .single();
+
+    console.log("goal", data, error);
 
     return data;
   }
