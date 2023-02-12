@@ -16,7 +16,7 @@ export default function Home() {
   const [notepadID, setNotepadID] = useState(null);
 
   useEffect(() => {
-    setNotepadID((notepadID) => notepad.id);
+    setNotepadID((notepadID) => notepad?.id);
     console.log("id", notepadID);
   }, [notepad]);
 

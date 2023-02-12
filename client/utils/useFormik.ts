@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { getPostgreSQLDate } from "./getDate";
 import { addGoal, updateGoal } from "./goalActions";
 import { goalValidationSchema } from "./goalSchema";
-import { addNote } from "./noteActions";
+import { addNote, updateNote } from "./noteActions";
 import { loginValidationSchema } from "./userSchema";
 
 interface LoginForm {
@@ -30,6 +30,7 @@ export const loginActionFormik = (
 
 export const noteActionFormik = (dailyNote: Note, notepadID: any) => {
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       date: getPostgreSQLDate(),
       meditation: dailyNote.meditation ?? "",
@@ -45,7 +46,7 @@ export const noteActionFormik = (dailyNote: Note, notepadID: any) => {
     // validationSchema: noteValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      // addNote(values, dailyNote);
+      dailyNote ? addNote(values) : updateNote(values, dailyNote);
     },
   });
 

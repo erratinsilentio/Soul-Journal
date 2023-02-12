@@ -17,20 +17,8 @@ export const checkIfDailyNoteExists = async (currentNotepadID: any) => {
   return data;
 };
 
-export const addNote = async (note: Note, dailyNote: Note) => {
-  console.log(note);
-
-  if (dailyNote) {
-    const { data: updatedNote, error } = await supabase
-      .from("note")
-      .update([note])
-      .eq("id", dailyNote.id)
-      .select()
-      .single();
-
-    console.log(error, updatedNote);
-    return updatedNote;
-  }
+export const addNote = async (note: Note) => {
+  console.log("note from add note", note);
 
   const { data: newNote, error } = await supabase
     .from("note")
@@ -38,7 +26,21 @@ export const addNote = async (note: Note, dailyNote: Note) => {
     .select()
     .single();
 
-  console.log("new note: ", newNote, error);
+  console.log("new note from add note: ", newNote, error);
 
   return newNote;
+};
+
+export const updateNote = async (note: Note, dailyNote: Note) => {
+  console.log("note from update note", note);
+
+  const { data: updatedNote, error } = await supabase
+    .from("note")
+    .update([note])
+    .eq("id", dailyNote.id)
+    .select()
+    .single();
+
+  console.log("new note from update note", error, updatedNote);
+  return updatedNote;
 };
