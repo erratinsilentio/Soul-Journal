@@ -1,6 +1,10 @@
 "use client";
 import { Note } from "@/types";
+import { checkIfDailyNoteExists } from "@/utils/noteActions";
 import { noteActionFormik } from "@/utils/useFormik";
+import { useQuery } from "@tanstack/react-query";
+import { Loading } from "../loading/Loading";
+import { Error } from "../error/Error";
 import { SelectSection } from "./SelectSection";
 import { TextSection } from "./TextSection";
 

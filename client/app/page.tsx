@@ -7,18 +7,24 @@ import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { Error } from "@/components/error/Error";
 import { Loading } from "@/components/loading/Loading";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const isDark = useSelector((state: RootState) => state.theme);
-  const currentNotepad = useSelector((state: RootState) => state.user.notepad);
+  const notepad = useSelector((state: RootState) => state.user.notepad);
+
+  const [notepadID, setNotepadID] = useState(null);
+
+  useEffect(() => {
+    setNotepadID((notepadID) => notepad.id);
+    console.log("id", notepadID);
+  }, [notepad]);
 
   const {
     data: dailyNoteData,
     isLoading,
     error,
-  } = useQuery(["daily", currentNotepad?.id], () =>
-    checkIfDailyNoteExists(currentNotepad?.id)
-  );
+  } = useQuery(["daily", notepadID], () => checkIfDailyNoteExists(notepadID));
 
   if (isLoading) return <Loading />;
   if (error) return <Error />;
@@ -28,7 +34,7 @@ export default function Home() {
       <main className="z-0 min-h-screen min-w-full p-5 sm:p-10">
         <DailyNoteForm
           dailyNote={dailyNoteData}
-          notepad={currentNotepad?.id}
+          notepad={notepadID}
           isDark={isDark}
         />
       </main>

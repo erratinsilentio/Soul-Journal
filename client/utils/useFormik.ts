@@ -28,7 +28,7 @@ export const loginActionFormik = (
   return formik;
 };
 
-export const noteActionFormik = (dailyNote: Note, notepadID: string) => {
+export const noteActionFormik = (dailyNote: Note, notepadID: any) => {
   const formik = useFormik({
     initialValues: {
       date: getPostgreSQLDate(),
@@ -45,7 +45,7 @@ export const noteActionFormik = (dailyNote: Note, notepadID: string) => {
     // validationSchema: noteValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      addNote(values, dailyNote);
+      // addNote(values, dailyNote);
     },
   });
 
