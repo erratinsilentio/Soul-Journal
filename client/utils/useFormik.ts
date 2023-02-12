@@ -46,7 +46,7 @@ export const noteActionFormik = (dailyNote: Note, notepadID: any) => {
     // validationSchema: noteValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      dailyNote ? addNote(values) : updateNote(values, dailyNote);
+      dailyNote ? updateNote(values, dailyNote) : addNote(values);
     },
   });
 
