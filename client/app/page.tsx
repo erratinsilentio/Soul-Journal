@@ -31,12 +31,12 @@ export default function Home() {
 
   return (
     <ProtectedWrapper>
-      <main className="z-0 min-h-screen min-w-full p-5 sm:p-10">
-        <DailyNoteForm
-          dailyNote={dailyNoteData}
-          userID={userID}
-          isDark={isDark}
-        />
+      <main
+        className={`${
+          isDark ? "light" : "dark"
+        } z-0 min-h-screen min-w-full p-5 sm:p-10`}
+      >
+        <DailyNoteForm dailyNote={dailyNoteData} userID={userID} />
       </main>
     </ProtectedWrapper>
   );
