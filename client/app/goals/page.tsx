@@ -12,7 +12,7 @@ const Goals = () => {
   const [userID, setUserID] = useState(null);
 
   useEffect(() => {
-    setUserID((userID) => user.id);
+    setUserID((userID) => user?.id);
   }, [user]);
 
   return (

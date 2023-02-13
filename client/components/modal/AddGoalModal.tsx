@@ -1,7 +1,5 @@
 "use client";
-import { RootState } from "@/store/store";
 import { addGoalFormik } from "@/utils/useFormik";
-import { useSelector } from "react-redux";
 import { Modal } from "./Modal";
 
 export const AddGoalModal = ({ userID }: { userID: string }) => {

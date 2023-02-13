@@ -1,5 +1,6 @@
 import { closeGoalModal } from "@/store/modalSlice";
 import { RootState } from "@/store/store";
+import { useClickOutside } from "@/utils/useClickOutside";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
