@@ -4,8 +4,8 @@ import { addGoalFormik } from "@/utils/useFormik";
 import { useSelector } from "react-redux";
 import { Modal } from "./Modal";
 
-export const AddGoalModal = ({ goalpadID }: { goalpadID: string }) => {
-  const formik = addGoalFormik(goalpadID);
+export const AddGoalModal = ({ userID }: { userID: string }) => {
+  const formik = addGoalFormik(userID);
 
   return (
     <Modal>

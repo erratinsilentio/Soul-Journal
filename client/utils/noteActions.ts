@@ -2,13 +2,13 @@ import { supabase } from "@/supabase";
 import { Note } from "@/types";
 import { getPostgreSQLDate } from "./getDate";
 
-export const checkIfDailyNoteExists = async (currentNotepadID: any) => {
+export const checkIfDailyNoteExists = async (userID: any) => {
   const currentDate = getPostgreSQLDate();
 
   const { data, error } = await supabase
     .from("note")
     .select()
-    .eq("notepad_id", currentNotepadID)
+    .eq("user_id", userID)
     .eq("date", currentDate)
     .single();
 

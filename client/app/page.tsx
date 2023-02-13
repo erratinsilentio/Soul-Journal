@@ -11,20 +11,20 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const isDark = useSelector((state: RootState) => state.theme);
-  const notepad = useSelector((state: RootState) => state.user.notepad);
+  const user = useSelector((state: RootState) => state.user.user);
 
-  const [notepadID, setNotepadID] = useState(null);
+  const [userID, setUserID] = useState(null);
 
   useEffect(() => {
-    setNotepadID((notepadID) => notepad?.id);
-    console.log("id", notepadID);
-  }, [notepad]);
+    setUserID((userID) => user?.id);
+    console.log("id", userID);
+  }, [user]);
 
   const {
     data: dailyNoteData,
     isLoading,
     error,
-  } = useQuery(["daily", notepadID], () => checkIfDailyNoteExists(notepadID));
+  } = useQuery(["daily", userID], () => checkIfDailyNoteExists(userID));
 
   if (isLoading) return <Loading />;
   if (error) return <Error />;
@@ -34,7 +34,7 @@ export default function Home() {
       <main className="z-0 min-h-screen min-w-full p-5 sm:p-10">
         <DailyNoteForm
           dailyNote={dailyNoteData}
-          notepad={notepadID}
+          userID={userID}
           isDark={isDark}
         />
       </main>

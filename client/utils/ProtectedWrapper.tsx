@@ -19,8 +19,8 @@ export const ProtectedWrapper = ({
       if (session) {
         dispatch(setSession(session));
         getUser(session.user.id).then((data) => dispatch(setUser(data)));
-        getNotepad(session.user.id).then((data) => dispatch(setNotepad(data)));
-        getGoals(session.user.id).then((data) => dispatch(setGoals(data)));
+        // getNotepad(session.user.id).then((data) => dispatch(setNotepad(data)));
+        // getGoals(session.user.id).then((data) => dispatch(setGoals(data)));
       } else {
         router.push("/login");
       }

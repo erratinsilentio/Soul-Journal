@@ -28,7 +28,7 @@ export const loginActionFormik = (
   return formik;
 };
 
-export const noteActionFormik = (dailyNote: Note, notepadID: any) => {
+export const noteActionFormik = (dailyNote: Note, userID: string) => {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -41,25 +41,26 @@ export const noteActionFormik = (dailyNote: Note, notepadID: any) => {
       gratitude: dailyNote.gratitude ?? "",
       forgiveness: dailyNote.forgiveness ?? "",
       love: dailyNote.love ?? "",
-      notepad_id: notepadID,
+      user_id: userID,
     },
     // validationSchema: noteValidationSchema,
     onSubmit: async (values) => {
-      console.log(values);
-      dailyNote ? updateNote(values, dailyNote) : addNote(values);
+      console.log(values, dailyNote);
+      dailyNote.date ? updateNote(values, dailyNote) : addNote(values);
     },
   });
 
   return formik;
 };
 
-export const addGoalFormik = (goalpad: any) => {
+export const addGoalFormik = (userID: string) => {
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       title: "",
       description: "",
       deadline: "",
-      goalpad_id: goalpad,
+      user_id: userID,
     },
     validationSchema: goalValidationSchema,
     onSubmit: async (values) => {
@@ -71,13 +72,14 @@ export const addGoalFormik = (goalpad: any) => {
   return formik;
 };
 
-export const updateGoalFormik = (oldGoal: Goal, goalpadID: string) => {
+export const updateGoalFormik = (oldGoal: Goal, userID: string) => {
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
       title: oldGoal.title,
       description: oldGoal.description,
       deadline: oldGoal.deadline,
-      goalpad_id: goalpadID,
+      user_id: userID,
     },
     validationSchema: goalValidationSchema,
     onSubmit: async (values) => {

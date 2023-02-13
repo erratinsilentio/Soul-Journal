@@ -8,18 +8,18 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const Goals = () => {
-  const goalpad = useSelector((state: RootState) => state.user.goals);
-  const [goalpadID, setGoalpadID] = useState(null);
+  const user = useSelector((state: RootState) => state.user.user);
+  const [userID, setUserID] = useState(null);
 
   useEffect(() => {
-    setGoalpadID((goalpadID) => goalpad.id);
-  }, [goalpad]);
+    setUserID((userID) => user.id);
+  }, [user]);
 
   return (
     <ProtectedWrapper>
       <main className="z-0 flex min-h-screen min-w-full items-start justify-center bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900 p-10">
         <TabMenu />
-        <AddGoalModal goalpadID={goalpadID} />
+        <AddGoalModal userID={userID} />
         <AddGoalButton />
       </main>
     </ProtectedWrapper>

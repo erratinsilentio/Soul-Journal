@@ -1,23 +1,19 @@
 "use client";
 import { Note } from "@/types";
-import { checkIfDailyNoteExists } from "@/utils/noteActions";
 import { noteActionFormik } from "@/utils/useFormik";
-import { useQuery } from "@tanstack/react-query";
-import { Loading } from "../loading/Loading";
-import { Error } from "../error/Error";
 import { SelectSection } from "./SelectSection";
 import { TextSection } from "./TextSection";
 
 export const DailyNoteForm = ({
   dailyNote,
-  notepad,
+  userID,
   isDark,
 }: {
   dailyNote: Note;
-  notepad: string;
+  userID: string;
   isDark: boolean;
 }) => {
-  const formik = noteActionFormik(dailyNote || {}, notepad);
+  const formik = noteActionFormik(dailyNote || {}, userID);
 
   return (
     <div className={isDark ? "light" : "dark"}>
