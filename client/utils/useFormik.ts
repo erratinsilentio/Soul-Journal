@@ -5,7 +5,6 @@ import { useFormik } from "formik";
 import { getPostgreSQLDate } from "./getDate";
 import { addGoal, updateGoal } from "./goalActions";
 import { goalValidationSchema } from "./goalSchema";
-import { addNote, updateNote } from "./noteActions";
 import { noteValidationSchema } from "./noteSchema";
 import { loginValidationSchema } from "./userSchema";
 
@@ -62,7 +61,10 @@ export const noteActionFormik = (
   return formik;
 };
 
-export const addGoalFormik = (userID: string) => {
+export const addGoalFormik = (
+  userID: string,
+  addGoalMutation: UseMutationResult<any, unknown, Goal, unknown>
+) => {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -74,7 +76,7 @@ export const addGoalFormik = (userID: string) => {
     validationSchema: goalValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      addGoal(values);
+      addGoalMutation.mutate(values);
     },
   });
 
