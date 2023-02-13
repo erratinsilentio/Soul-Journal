@@ -4,11 +4,6 @@ export interface User {
   streak?: number;
 }
 
-export interface Notepad {
-  id: string;
-  user_id: string;
-}
-
 export interface Note {
   id?: string;
   date?: string;
@@ -20,12 +15,7 @@ export interface Note {
   gratitude: string;
   forgiveness: string;
   love: string;
-  notepad_id?: string;
-}
-
-export interface Goals {
-  id: string;
-  user_id: string;
+  user_id?: string;
 }
 
 export interface Goal {
@@ -33,5 +23,5 @@ export interface Goal {
   title: string;
   description: string;
   deadline: string;
-  goals_id?: string;
+  user_id?: string;
 }

@@ -1,9 +1,10 @@
 import { setSession } from "@/store/authSlice";
+import { RootState } from "@/store/store";
 import { setGoals, setNotepad, setUser } from "@/store/userSlice";
 import { supabase } from "@/supabase";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getGoals, getNotepad, getUser } from "./userActions";
 
 export const ProtectedWrapper = ({
@@ -12,6 +13,8 @@ export const ProtectedWrapper = ({
   children: React.ReactNode;
 }) => {
   const dispatch = useDispatch();
+  // const user = useSelector((state: RootState) => state.user.user);
+  // check for user id, so we would not have request session from supabase?
   const router = useRouter();
 
   useEffect(() => {
@@ -19,8 +22,6 @@ export const ProtectedWrapper = ({
       if (session) {
         dispatch(setSession(session));
         getUser(session.user.id).then((data) => dispatch(setUser(data)));
-        // getNotepad(session.user.id).then((data) => dispatch(setNotepad(data)));
-        // getGoals(session.user.id).then((data) => dispatch(setGoals(data)));
       } else {
         router.push("/login");
       }

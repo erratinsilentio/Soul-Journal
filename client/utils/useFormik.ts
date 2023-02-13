@@ -1,10 +1,12 @@
 "use client";
 import { Goal, Note } from "@/types";
+import { UseMutationResult } from "@tanstack/react-query/build/lib/types";
 import { useFormik } from "formik";
 import { getPostgreSQLDate } from "./getDate";
 import { addGoal, updateGoal } from "./goalActions";
 import { goalValidationSchema } from "./goalSchema";
 import { addNote, updateNote } from "./noteActions";
+import { noteValidationSchema } from "./noteSchema";
 import { loginValidationSchema } from "./userSchema";
 
 interface LoginForm {
@@ -28,7 +30,12 @@ export const loginActionFormik = (
   return formik;
 };
 
-export const noteActionFormik = (dailyNote: Note, userID: string) => {
+export const noteActionFormik = (
+  dailyNote: Note,
+  userID: string,
+  addNoteMutation: UseMutationResult<any, unknown, Note, unknown>,
+  updateNoteMutation: UseMutationResult<any, unknown, [Note, Note], unknown>
+) => {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
@@ -43,10 +50,12 @@ export const noteActionFormik = (dailyNote: Note, userID: string) => {
       love: dailyNote.love ?? "",
       user_id: userID,
     },
-    // validationSchema: noteValidationSchema,
+    validationSchema: noteValidationSchema,
     onSubmit: async (values) => {
       console.log(values, dailyNote);
-      dailyNote.date ? updateNote(values, dailyNote) : addNote(values);
+      dailyNote.date
+        ? updateNoteMutation.mutate([values, dailyNote])
+        : addNoteMutation.mutate(values);
     },
   });
 
