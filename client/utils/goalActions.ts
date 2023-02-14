@@ -1,5 +1,6 @@
 import { supabase } from "@/supabase";
 import { Goal } from "@/types";
+import { categorizeGoals } from "./categorizeGoals";
 
 export const getGoals = async (userID: string) => {
   const { data, error } = await supabase
@@ -9,7 +10,9 @@ export const getGoals = async (userID: string) => {
 
   console.log("getGoals: ", data, error);
 
-  return data;
+  let categorizedGoals = categorizeGoals(data);
+
+  return categorizedGoals;
 };
 
 export const addGoal = async (goal: Goal) => {
