@@ -1,63 +1,75 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
+import { getGoals } from "@/utils/goalActions";
+import { useQuery } from "@tanstack/react-query";
+import { Loading } from "../loading/Loading";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export const TabMenu = () => {
+export const TabMenu = ({ userID }: { userID: string }) => {
+  // const [goals, setGoals] = useState(null);
+
+  // useEffect(() => {
+  //   getGoals(userID).then((data) => setGoals(data));
+  // }, []);
+
   let [categories] = useState({
     "This Week": [
       {
         id: 1,
         title: "Does drinking coffee make you smarter?",
-        date: "5h ago",
-        commentCount: 5,
-        shareCount: 2,
+        description: "5h ago",
+        deadline: "5-10-2024",
       },
       {
         id: 2,
-        title: "So you've bought coffee... now what?",
-        date: "2h ago",
-        commentCount: 3,
-        shareCount: 2,
+        title: "Does drinking coffee make you smarter?",
+        description: "5h ago",
+        deadline: 5,
       },
     ],
     "This Month": [
       {
-        id: 1,
-        title: "Is tech making coffee better or worse?",
-        date: "Jan 7",
-        commentCount: 29,
-        shareCount: 16,
+        id: 3,
+        title: "Does drinking coffee make you smarter?",
+        description: "5h ago",
+        deadline: 5,
       },
       {
-        id: 2,
-        title: "The most innovative things happening in coffee",
-        date: "Mar 19",
-        commentCount: 24,
-        shareCount: 12,
+        id: 4,
+        title: "Does drinking coffee make you smarter?",
+        description: "5h ago",
+        deadline: 5,
       },
     ],
     "This Year": [
       {
-        id: 1,
-        title: "Ask Me Anything: 10 answers to your questions about coffee",
-        date: "2d ago",
-        commentCount: 9,
-        shareCount: 5,
+        id: 5,
+        title: "Does drinking coffee make you smarter?",
+        description: "5h ago",
+        deadline: 5,
       },
       {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: "4d ago",
-        commentCount: 1,
-        shareCount: 2,
+        id: 6,
+        title: "Does drinking coffee make you smarter?",
+        description: "5h ago",
+        deadline: 5,
       },
     ],
   });
+
+  const {
+    data: goals,
+    isLoading,
+    error,
+  } = useQuery(["goals"], () => getGoals(userID));
+
+  if (isLoading) return <Loading />;
+  if (error) return <p>error</p>;
 
   return (
     <div className="min-w-full max-w-md px-2 sm:px-0">
@@ -98,11 +110,9 @@ export const TabMenu = () => {
                     </h3>
 
                     <ul className="mt-1 flex space-x-1 text-xs font-normal leading-4 text-gray-500">
-                      <li>{post.date}</li>
                       <li>&middot;</li>
-                      <li>{post.commentCount} comments</li>
+                      <li>{post.deadline}</li>
                       <li>&middot;</li>
-                      <li>{post.shareCount} shares</li>
                     </ul>
 
                     <a

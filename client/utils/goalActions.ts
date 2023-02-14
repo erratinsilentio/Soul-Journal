@@ -1,6 +1,17 @@
 import { supabase } from "@/supabase";
 import { Goal } from "@/types";
 
+export const getGoals = async (userID: string) => {
+  const { data, error } = await supabase
+    .from("goal")
+    .select()
+    .eq("user_id", userID);
+
+  console.log("getGoals: ", data, error);
+
+  return data;
+};
+
 export const addGoal = async (goal: Goal) => {
   const { data, error } = await supabase
     .from("goal")
