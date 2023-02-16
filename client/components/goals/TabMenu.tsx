@@ -11,7 +11,9 @@ export const TabMenu = ({ userID }: { userID: string }) => {
     data: goals,
     isLoading,
     error,
-  } = useQuery(["goals"], () => getGoals(userID));
+  } = useQuery(["goals", userID], () => getGoals(userID), {
+    enabled: !!userID,
+  });
 
   if (isLoading) return <Loading />;
   if (error) return <Error />;

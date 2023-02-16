@@ -1,33 +1,23 @@
+import { User } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Session } from "@supabase/gotrue-js/src/lib/types";
 
-interface userState {
-  user: any;
-  notepad: any;
-  goals: any;
+interface UserState {
+  user: User | null;
 }
-const initialState: userState = {
+const initialState: UserState = {
   user: null,
-  notepad: null,
-  goals: null,
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    setUser: (state, action: PayloadAction<Session>) => {
+    setUser: (state, action: PayloadAction<User>) => {
       state.user = action.payload;
-    },
-    setNotepad: (state, action: PayloadAction<Session>) => {
-      state.notepad = action.payload;
-    },
-    setGoals: (state, action: PayloadAction<Session>) => {
-      state.goals = action.payload;
     },
   },
 });
 
-export const { setUser, setNotepad, setGoals } = userSlice.actions;
+export const { setUser } = userSlice.actions;
 
 export default userSlice.reducer;

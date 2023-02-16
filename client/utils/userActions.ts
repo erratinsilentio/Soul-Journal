@@ -1,4 +1,5 @@
 import { supabase } from "@/supabase";
+import { User } from "@/types";
 
 export const getUser = async (id: string) => {
   let { data: user, error } = await supabase
@@ -7,7 +8,7 @@ export const getUser = async (id: string) => {
     .eq("id", id)
     .single();
 
-  return user;
+  return user as User;
 };
 
 export const getNotepad = async (id: string) => {

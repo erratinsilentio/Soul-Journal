@@ -13,8 +13,7 @@ export const ProtectedWrapper = ({
   children: React.ReactNode;
 }) => {
   const dispatch = useDispatch();
-  // const user = useSelector((state: RootState) => state.user.user);
-  // check for user id, so we would not have request session from supabase?
+
   const router = useRouter();
 
   useEffect(() => {

@@ -6,7 +6,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function HeadlessTabs({ categories, page }) {
+export default function HeadlessTabs({ categories }) {
   return (
     <div className="min-w-full max-w-md px-2 sm:px-0">
       <Tab.Group>

@@ -2,24 +2,20 @@
 import { AddGoalButton } from "@/components/goals/AddGoalButton";
 import { TabMenu } from "@/components/goals/TabMenu";
 import { AddGoalModal } from "@/components/modal/AddGoalModal";
-import { RootState } from "@/store/store";
+import { useAppSelector } from "@/store/store";
 import { ProtectedWrapper } from "@/utils/ProtectedWrapper";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 const Goals = () => {
-  const user = useSelector((state: RootState) => state.user.user);
-  const [userID, setUserID] = useState(null);
+  const user = useAppSelector((state) => state.user.user);
+  console.log("user from redux", user?.id);
 
-  useEffect(() => {
-    setUserID((userID) => user?.id);
-  }, [user]);
+  ///sam routing
 
   return (
     <ProtectedWrapper>
       <main className="z-0 flex min-h-screen min-w-full items-start justify-center bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900 p-10">
-        <TabMenu userID={userID} />
-        <AddGoalModal userID={userID} />
+        <TabMenu userID={user?.id} />
+        <AddGoalModal userID={user?.id} />
         <AddGoalButton />
       </main>
     </ProtectedWrapper>
