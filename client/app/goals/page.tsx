@@ -2,7 +2,6 @@
 import { AddGoalButton } from "@/components/goals/AddGoalButton";
 import { TabMenu } from "@/components/goals/TabMenu";
 import { AddGoalModal } from "@/components/modal/AddGoalModal";
-import { useAppSelector } from "@/store/store";
 import { ProtectedWrapper } from "@/utils/ProtectedWrapper";
 
 const Goals = () => {

@@ -64,6 +64,19 @@ export const makeGoalDone = async (goal: Goal) => {
   return data;
 };
 
+export const archiveGoal = async (goal: Goal) => {
+  const updatedGoal = { ...goal, archived: true };
+
+  const { data, error } = await supabase
+    .from("goal")
+    .update([updatedGoal])
+    .eq("id", goal.id)
+    .select()
+    .single();
+
+  return data;
+};
+
 export const deleteGoal = async (goalID: string) => {
   const { data, error } = await supabase.from("goal").delete().eq("id", goalID);
 

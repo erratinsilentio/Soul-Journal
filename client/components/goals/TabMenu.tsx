@@ -1,9 +1,9 @@
 "use client";
 import { getGoals } from "@/utils/goalActions";
 import { useQuery } from "@tanstack/react-query";
-import HeadlessTabs from "../tab/Tab";
 import { useAppSelector } from "@/store/store";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
+import GoalTabs from "../tab/GoalTab";
 
 export const TabMenu = () => {
   const user = useAppSelector((state) => state.user.user);
@@ -18,7 +18,7 @@ export const TabMenu = () => {
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>
-      <HeadlessTabs categories={goals} />
+      <GoalTabs categories={goals} />
     </ErrorLoadingWrapper>
   );
 };

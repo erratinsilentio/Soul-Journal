@@ -2,7 +2,13 @@ import { setError, setSuccess } from "@/store/notificationSlice";
 import { useAppDispatch } from "@/store/store";
 import { Goal } from "@/types";
 import { useMutation } from "@tanstack/react-query";
-import { addGoal, deleteGoal, makeGoalDone, updateGoal } from "./goalActions";
+import {
+  addGoal,
+  archiveGoal,
+  deleteGoal,
+  makeGoalDone,
+  updateGoal,
+} from "./goalActions";
 import { queryClient } from "./QueryClient";
 
 export const useGoalMutation = () => {
@@ -68,10 +74,26 @@ export const useGoalMutation = () => {
     }
   );
 
+  const archiveGoalMutation = useMutation(
+    async (goal: Goal) => {
+      return archiveGoal(goal);
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries(["goals"]);
+        dispatch(setSuccess());
+      },
+      onError: () => {
+        dispatch(setError());
+      },
+    }
+  );
+
   return {
     addGoalMutation,
     updateGoalMutation,
     makeGoalDoneMutation,
     deleteGoalMutation,
+    archiveGoalMutation,
   };
 };

@@ -3,7 +3,8 @@ import { useGoalMutation } from "@/utils/useGoalMutation";
 import { BsThreeDots } from "react-icons/bs";
 
 export const GoalButtons = ({ post }: { post: Goal }) => {
-  const { makeGoalDoneMutation, deleteGoalMutation } = useGoalMutation();
+  const { makeGoalDoneMutation, deleteGoalMutation, archiveGoalMutation } =
+    useGoalMutation();
 
   return (
     <section className="flex flex-row items-center justify-evenly p-5">
@@ -21,7 +22,7 @@ export const GoalButtons = ({ post }: { post: Goal }) => {
             </a>
           </li>
           <li>
-            <a>Archive</a>
+            <a onClick={() => archiveGoalMutation.mutateAsync(post)}>Archive</a>
           </li>
         </ul>
       </div>
