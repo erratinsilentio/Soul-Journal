@@ -1,5 +1,4 @@
 import { Tab } from "@headlessui/react";
-import Link from "next/link";
 import { GoalRow } from "./GoalRow";
 import { NoteRow } from "./NoteRow";
 
@@ -7,7 +6,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function HeadlessTabs({ categories }) {
+export default function ArchiveTabs({ categories }) {
   return (
     <div className="min-w-full max-w-md px-2 sm:px-0">
       <Tab.Group>
@@ -38,11 +37,7 @@ export default function HeadlessTabs({ categories }) {
             >
               <ul>
                 {posts.map((post) =>
-                  post.deadline ? (
-                    <GoalRow post={post} />
-                  ) : (
-                    <NoteRow post={post} />
-                  )
+                  post.date ? <NoteRow post={post} /> : <GoalRow post={post} />
                 )}
               </ul>
             </Tab.Panel>

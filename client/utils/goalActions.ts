@@ -15,6 +15,15 @@ export const getGoals = async (userID: string) => {
   return categorizedGoals;
 };
 
+export const getAllGoals = async (userID: string) => {
+  const { data, error } = await supabase
+    .from("goal")
+    .select()
+    .eq("user_id", userID);
+
+  return data;
+};
+
 export const getGoal = async (noteID: string) => {
   const { data, error } = await supabase
     .from("goal")

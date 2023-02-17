@@ -1,7 +1,5 @@
 import { Tab } from "@headlessui/react";
-import Link from "next/link";
 import { GoalRow } from "./GoalRow";
-import { NoteRow } from "./NoteRow";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

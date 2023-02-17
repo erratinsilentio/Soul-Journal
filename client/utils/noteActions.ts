@@ -44,3 +44,12 @@ export const updateNote = async (note: Note, dailyNote: Note) => {
   console.log("new note from update note", error, updatedNote);
   return updatedNote;
 };
+
+export const getAllNotes = async (userID: string) => {
+  let { data: notes, error } = await supabase
+    .from("note")
+    .select()
+    .eq("user_id", userID);
+
+  return notes;
+};
