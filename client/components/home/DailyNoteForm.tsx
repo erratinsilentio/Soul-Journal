@@ -1,11 +1,7 @@
 "use client";
-import { setError, setSuccess } from "@/store/notificationSlice";
 import { Note } from "@/types";
-import { addNote, updateNote } from "@/utils/noteActions";
-import { queryClient } from "@/utils/QueryClient";
 import { noteActionFormik } from "@/utils/useFormik";
-import { useMutation } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
+import { useNoteMutation } from "@/utils/useNoteMutation";
 import { InputSection } from "./InputSection";
 import { SaveButton } from "./SaveButton";
 
@@ -16,37 +12,7 @@ export const DailyNoteForm = ({
   dailyNote: Note;
   userID: string;
 }) => {
-  const dispatch = useDispatch();
-
-  const addNoteMutation = useMutation(
-    async (values: Note) => {
-      return addNote(values);
-    },
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(["notes"]);
-        dispatch(setSuccess());
-      },
-      onError: () => {
-        dispatch(setError());
-      },
-    }
-  );
-
-  const updateNoteMutation = useMutation(
-    async ([values, dailyNote]: [Note, Note]) => {
-      return updateNote(values, dailyNote);
-    },
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(["notes"]);
-        dispatch(setSuccess());
-      },
-      onError: () => {
-        dispatch(setError());
-      },
-    }
-  );
+  const { addNoteMutation, updateNoteMutation } = useNoteMutation();
 
   const formik = noteActionFormik(
     dailyNote || {},
