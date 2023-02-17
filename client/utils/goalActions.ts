@@ -50,3 +50,22 @@ export const updateGoal = async (oldGoal: Goal, newGoal: Goal) => {
   console.log("update goal: ", data, error);
   return data;
 };
+
+export const makeGoalDone = async (goal: Goal) => {
+  const updatedGoal = { ...goal, done: !goal.done };
+
+  const { data, error } = await supabase
+    .from("goal")
+    .update([updatedGoal])
+    .eq("id", goal.id)
+    .select()
+    .single();
+
+  return data;
+};
+
+export const deleteGoal = async (goalID: string) => {
+  const { data, error } = await supabase.from("goal").delete().eq("id", goalID);
+
+  return data;
+};

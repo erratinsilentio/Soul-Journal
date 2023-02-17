@@ -4,7 +4,6 @@ import { getGoal } from "@/utils/goalActions";
 import { updateGoalFormik } from "@/utils/useFormik";
 import { useGoalMutation } from "@/utils/useGoalMutation";
 import { useQuery } from "@tanstack/react-query";
-import Link from "next/link";
 import { GoalForm } from "./GoalForm";
 
 export const UpdateGoalForm = ({ id }: { id: string }) => {
