@@ -3,7 +3,7 @@ import { useGoalMutation } from "@/utils/useGoalMutation";
 import { BsThreeDots } from "react-icons/bs";
 
 export const GoalButtons = ({ post }: { post: Goal }) => {
-  const { makeGoalDoneMutation } = useGoalMutation();
+  const { makeGoalDoneMutation, deleteGoalMutation } = useGoalMutation();
 
   return (
     <section className="flex flex-row items-center justify-evenly p-5">
@@ -16,7 +16,9 @@ export const GoalButtons = ({ post }: { post: Goal }) => {
           className="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
         >
           <li>
-            <a>Delete</a>
+            <a onClick={() => deleteGoalMutation.mutateAsync(post.id)}>
+              Delete
+            </a>
           </li>
           <li>
             <a>Archive</a>

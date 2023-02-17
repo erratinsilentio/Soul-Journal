@@ -53,7 +53,7 @@ export const useGoalMutation = () => {
     }
   );
 
-  const deleteGoalDoneMutation = useMutation(
+  const deleteGoalMutation = useMutation(
     async (goalID: string) => {
       return deleteGoal(goalID);
     },
@@ -72,5 +72,6 @@ export const useGoalMutation = () => {
     addGoalMutation,
     updateGoalMutation,
     makeGoalDoneMutation,
+    deleteGoalMutation,
   };
 };
