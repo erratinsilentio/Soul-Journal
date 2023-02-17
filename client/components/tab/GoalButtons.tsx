@@ -1,8 +1,8 @@
-import { Goal } from "@/types";
+import { Goal, Page } from "@/types";
 import { useGoalMutation } from "@/utils/useGoalMutation";
 import { BsThreeDots } from "react-icons/bs";
 
-export const GoalButtons = ({ post }: { post: Goal }) => {
+export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
   const { makeGoalDoneMutation, deleteGoalMutation, archiveGoalMutation } =
     useGoalMutation();
 
@@ -21,9 +21,13 @@ export const GoalButtons = ({ post }: { post: Goal }) => {
               Delete
             </a>
           </li>
-          <li>
-            <a onClick={() => archiveGoalMutation.mutateAsync(post)}>Archive</a>
-          </li>
+          {page !== "Archive" && (
+            <li>
+              <a onClick={() => archiveGoalMutation.mutateAsync(post)}>
+                Archive
+              </a>
+            </li>
+          )}
         </ul>
       </div>
       <input

@@ -37,7 +37,11 @@ export default function ArchiveTabs({ categories }) {
             >
               <ul>
                 {posts.map((post) =>
-                  post.date ? <NoteRow post={post} /> : <GoalRow post={post} />
+                  post.date ? (
+                    <NoteRow post={post} />
+                  ) : (
+                    <GoalRow post={post} page="Archive" />
+                  )
                 )}
               </ul>
             </Tab.Panel>

@@ -26,3 +26,5 @@ export interface Goal {
   user_id?: string;
   done: boolean;
 }
+
+export type Page = "Home" | "Goals" | "Archive" | "Settings";
