@@ -24,4 +24,5 @@ export interface Goal {
   description: string;
   deadline: string;
   user_id?: string;
+  done: boolean;
 }

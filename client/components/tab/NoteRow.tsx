@@ -1,4 +1,6 @@
-export const NoteRow = ({ post, classNames }) => {
+import Link from "next/link";
+
+export const NoteRow = ({ post }) => {
   return (
     <li key={post.id} className="relative rounded-md p-3 hover:bg-zinc-700">
       <h3 className="text-sm font-medium leading-5">{post.title}</h3>
@@ -8,8 +10,6 @@ export const NoteRow = ({ post, classNames }) => {
         <li>{post.date} note</li>
         <li>&middot;</li>
       </ul>
-
-      <a href="#" className={classNames("absolute inset-0 rounded-md")} />
     </li>
   );
 };

@@ -15,6 +15,18 @@ export const getGoals = async (userID: string) => {
   return categorizedGoals;
 };
 
+export const getGoal = async (noteID: string) => {
+  const { data, error } = await supabase
+    .from("goal")
+    .select()
+    .eq("id", noteID)
+    .single();
+
+  console.log("getGoal: ", data, error);
+
+  return data as Goal;
+};
+
 export const addGoal = async (goal: Goal) => {
   const { data, error } = await supabase
     .from("goal")
@@ -23,10 +35,11 @@ export const addGoal = async (goal: Goal) => {
     .single();
 
   console.log("add goal: ", data, error);
-  return data;
+  return data as Goal;
 };
 
 export const updateGoal = async (oldGoal: Goal, newGoal: Goal) => {
+  console.log(oldGoal, newGoal);
   const { data, error } = await supabase
     .from("goal")
     .update([newGoal])

@@ -83,19 +83,22 @@ export const addGoalFormik = (
   return formik;
 };
 
-export const updateGoalFormik = (oldGoal: Goal, userID: string) => {
+export const updateGoalFormik = (
+  oldGoal: Goal,
+  updateGoalMutation: UseMutationResult<any, unknown, [Goal, Goal], unknown>
+) => {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      title: oldGoal.title,
-      description: oldGoal.description,
-      deadline: oldGoal.deadline,
-      user_id: userID,
+      title: oldGoal?.title,
+      description: oldGoal?.description,
+      deadline: oldGoal?.deadline,
+      user_id: oldGoal?.user_id,
     },
     validationSchema: goalValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
-      updateGoal(oldGoal, values);
+      updateGoalMutation.mutate([oldGoal, values]);
     },
   });
 

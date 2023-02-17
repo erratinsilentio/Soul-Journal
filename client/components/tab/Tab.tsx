@@ -1,4 +1,5 @@
 import { Tab } from "@headlessui/react";
+import Link from "next/link";
 import { GoalRow } from "./GoalRow";
 import { NoteRow } from "./NoteRow";
 
@@ -38,9 +39,9 @@ export default function HeadlessTabs({ categories }) {
               <ul>
                 {posts.map((post) =>
                   post.deadline ? (
-                    <GoalRow post={post} classNames={classNames} />
+                    <GoalRow post={post} />
                   ) : (
-                    <NoteRow post={post} classNames={classNames} />
+                    <NoteRow post={post} />
                   )
                 )}
               </ul>

@@ -8,7 +8,7 @@ import { ProtectedWrapper } from "@/utils/ProtectedWrapper";
 const Goals = () => {
   return (
     <ProtectedWrapper>
-      <main className="z-0 flex min-h-screen min-w-full items-start justify-center bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900 p-10">
+      <main className="z-0 flex min-h-screen min-w-full items-start justify-center bg-gradient-to-b from-stone-800 via-stone-800 to-stone-900 px-2 py-4 sm:p-10">
         <TabMenu />
         <AddGoalModal />
         <AddGoalButton />
