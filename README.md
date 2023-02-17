@@ -85,3 +85,6 @@ Feel free to play with this code by yourself!
 - [Tailwind CSS](https://tailwindcss.com)
 - [Formik](https://formik.org)
 - [Yup](https://github.com/jquense/yup)
+
+<img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.10_cknpwi.png">
+<img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.28_is8i60.png">
