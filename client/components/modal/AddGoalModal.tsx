@@ -1,10 +1,10 @@
 import { AddGoalForm } from "../goals/AddGoalForm";
 import { Modal } from "./Modal";
 
-export const AddGoalModal = ({ userID }: { userID: string }) => {
+export const AddGoalModal = () => {
   return (
     <Modal>
-      <AddGoalForm userID={userID} />
+      <AddGoalForm />
     </Modal>
   );
 };

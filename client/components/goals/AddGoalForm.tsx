@@ -1,29 +1,12 @@
-import { setError, setSuccess } from "@/store/notificationSlice";
-import { Goal } from "@/types";
-import { addGoal } from "@/utils/goalActions";
-import { queryClient } from "@/utils/QueryClient";
+import { useAppSelector } from "@/store/store";
 import { addGoalFormik } from "@/utils/useFormik";
-import { useMutation } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
+import { useGoalMutation } from "@/utils/useGoalMutation";
 
-export const AddGoalForm = ({ userID }: { userID: string }) => {
-  const dispatch = useDispatch();
+export const AddGoalForm = () => {
+  const { addGoalMutation } = useGoalMutation();
+  const user = useAppSelector((state) => state.user.user);
 
-  const addGoalMutation = useMutation(
-    async (values: Goal) => {
-      return addGoal(values);
-    },
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries(["goals"]);
-        dispatch(setSuccess());
-      },
-      onError: () => {
-        dispatch(setError());
-      },
-    }
-  );
-  const formik = addGoalFormik(userID, addGoalMutation);
+  const formik = addGoalFormik(user?.id, addGoalMutation);
 
   return (
     <form className="flex flex-col py-8 px-14" onSubmit={formik.handleSubmit}>
