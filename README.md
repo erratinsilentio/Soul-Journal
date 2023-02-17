@@ -37,7 +37,7 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository:
 
 ```
-git clone git@github.com:erratinsilentio/Orders.git
+git clone git@github.com:erratinsilentio/Soul-Journal.git
 ```
 
 2. Move to project directory:
