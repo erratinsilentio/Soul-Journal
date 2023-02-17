@@ -14,7 +14,6 @@ export const ArchiveTabs = () => {
     error,
   } = useQuery(["daily", user?.id], () => getNotesAndGoals(user?.id));
 
-  console.log(notesAndGoals);
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>
       <HeadlessTabs categories={notesAndGoals} />

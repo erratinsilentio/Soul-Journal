@@ -15,6 +15,7 @@ export const Navbar = () => {
   const isDark = useSelector((state: RootState) => state.theme);
 
   const [selected, setSelected] = useState<SelectedPath>(null);
+  const style = { color: "text-emerald-500" };
 
   return (
     <div className={isDark ? "light" : "dark"}>
@@ -29,6 +30,7 @@ export const Navbar = () => {
           <NavbarIcon
             icon={
               <CiStickyNote
+                style={style}
                 className={`${selected === "Home" && "text-emerald-500"}`}
               />
             }

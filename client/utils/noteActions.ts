@@ -12,28 +12,20 @@ export const checkIfDailyNoteExists = async (userID: any) => {
     .eq("date", currentDate)
     .single();
 
-  console.log("get daily note: ", data, error);
-
   return data;
 };
 
 export const addNote = async (note: Note) => {
-  console.log("note from add note", note);
-
   const { data: newNote, error } = await supabase
     .from("note")
     .insert([note])
     .select()
     .single();
 
-  console.log("new note from add note: ", newNote, error);
-
   return newNote;
 };
 
 export const updateNote = async (note: Note, dailyNote: Note) => {
-  console.log("note from update note", note);
-
   const { data: updatedNote, error } = await supabase
     .from("note")
     .update([note])
@@ -41,7 +33,6 @@ export const updateNote = async (note: Note, dailyNote: Note) => {
     .select()
     .single();
 
-  console.log("new note from update note", error, updatedNote);
   return updatedNote;
 };
 

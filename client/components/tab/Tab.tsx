@@ -38,9 +38,9 @@ export default function ArchiveTabs({ categories }) {
               <ul>
                 {posts.map((post) =>
                   post.date ? (
-                    <NoteRow post={post} />
+                    <NoteRow post={post} key={post.id} />
                   ) : (
-                    <GoalRow post={post} page="Archive" />
+                    <GoalRow post={post} page="Archive" key={post.id} />
                   )
                 )}
               </ul>

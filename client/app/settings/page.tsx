@@ -7,8 +7,6 @@ import { useSelector } from "react-redux";
 
 export default function Settings() {
   const user = useSelector((state: RootState) => state.user.user);
-  const notepad = useSelector((state: RootState) => state.user.notepad);
-  const goals = useSelector((state: RootState) => state.user.goals);
   const router = useRouter();
 
   async function logOut() {
@@ -20,9 +18,7 @@ export default function Settings() {
   return (
     <ProtectedWrapper>
       <main className="z-0 min-h-screen min-w-full p-10">
-        logged in as: {user.id}
-        <p>notepad: {notepad.id}</p>
-        <p>goals: {goals.id}</p>
+        logged in as: {user?.id}
         <button className="btn-wide btn" onClick={logOut}>
           Log out
         </button>

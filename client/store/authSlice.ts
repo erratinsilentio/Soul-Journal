@@ -10,7 +10,6 @@ export const authSlice = createSlice({
   reducers: {
     setSession: (state, action: PayloadAction<Session>) => {
       state = action.payload;
-      console.log(state);
       return state;
     },
   },
