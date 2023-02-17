@@ -34,6 +34,7 @@ export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
         type="checkbox"
         className="checkbox-success checkbox scale-0 group-hover:scale-100"
         checked={post.done ? true : false}
+        disabled={page === "Archive" ? true : false}
         onClick={() => makeGoalDoneMutation.mutateAsync(post)}
       />
     </section>
