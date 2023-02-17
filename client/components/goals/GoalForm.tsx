@@ -44,7 +44,7 @@ export const GoalForm = ({ formik, type }) => {
         <button
           type="button"
           className="btn-outline btn my-4"
-          onClick={() => router.push("/goals")}
+          onClick={() => router.back()}
         >
           Go Back
         </button>
