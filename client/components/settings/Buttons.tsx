@@ -10,15 +10,26 @@ export const Buttons = ({ id }: { id: string }) => {
 
   async function logOut() {
     let { error } = await supabase.auth.signOut();
-    router.push("/login");
     return;
   }
 
-  const showConfirm = async () => {
+  const showConfirmToLogin = async () => {
     const isConfirmed = await showModal();
 
     if (isConfirmed) {
-      console.log("confirmed");
+      logOut().then(() => {
+        router.push("/login");
+      });
+    }
+  };
+
+  const showConfirmToDelete = async () => {
+    const isConfirmed = await showModal();
+
+    if (isConfirmed) {
+      deleteUser(id).then(() => {
+        router.push("/login");
+      });
     }
   };
 
@@ -30,10 +41,10 @@ export const Buttons = ({ id }: { id: string }) => {
       >
         Edit Profile
       </button>
-      <button className="btn my-2 sm:w-80" onClick={showModal}>
+      <button className="btn my-2 sm:w-80" onClick={showConfirmToLogin}>
         Log out
       </button>
-      <button className="btn my-2 sm:w-80" onClick={() => deleteUser(id)}>
+      <button className="btn my-2 sm:w-80" onClick={showConfirmToDelete}>
         Delete Account
       </button>
     </section>
