@@ -1,5 +1,4 @@
 "use client";
-
 import { closeMenu } from "@/store/menuSlice";
 import { RootState, useAppDispatch } from "@/store/store";
 import Link from "next/link";

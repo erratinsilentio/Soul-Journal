@@ -1,8 +1,10 @@
 "use client";
+import { useAppSelector } from "@/store/store";
 import { useState, useEffect } from "react";
 
 export const Clock = () => {
   const [date, setDate] = useState<string>("");
+  const user = useAppSelector((state) => state.user.user);
 
   useEffect(() => {
     const timeInterval = setInterval(() => {
@@ -12,5 +14,5 @@ export const Clock = () => {
     return () => clearInterval(timeInterval);
   }, []);
 
-  return <div className="text-blue-100"> {date} </div>;
+  return user && <div className="text-blue-100"> {date} </div>;
 };

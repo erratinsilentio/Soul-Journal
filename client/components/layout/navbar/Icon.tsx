@@ -1,5 +1,4 @@
 "use client";
-
 import { closeMenu } from "@/store/menuSlice";
 import { useAppDispatch } from "@/store/store";
 import { ReactElement } from "react";
