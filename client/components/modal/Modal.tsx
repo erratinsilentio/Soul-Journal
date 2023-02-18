@@ -1,15 +1,25 @@
-import { closeGoalModal } from "@/store/modalSlice";
-import { RootState } from "@/store/store";
-import { useClickOutside } from "@/utils/useClickOutside";
+"use client";
+import { closeConfirmModal, closeGoalModal } from "@/store/modalSlice";
+import { useAppDispatch, useAppSelector } from "@/store/store";
+import { ModalType } from "@/types";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 
-export const Modal = ({ children }: { children: React.ReactNode }) => {
-  const isOpen = useSelector((state: RootState) => state.modal.goalModal);
-  const dispatch = useDispatch();
+export const Modal = ({
+  children,
+  type,
+}: {
+  children: React.ReactNode;
+  type: ModalType;
+}) => {
+  const isOpen = useAppSelector((state) =>
+    type == "Goal" ? state.modal.goalModal : state.modal.confirmModal
+  );
+  const dispatch = useAppDispatch();
 
   const [fullscreen, setFullscreen] = useState<boolean>(false);
   const [minimized, setMinimized] = useState<boolean>(false);
+
+  console.log(isOpen);
 
   return (
     <main
@@ -26,7 +36,11 @@ export const Modal = ({ children }: { children: React.ReactNode }) => {
       <div className="flex h-5 min-w-full items-center justify-start rounded-t-lg bg-zinc-500 px-4">
         <button
           className="h-3 w-3 rounded-full bg-rose-500 leading-4 text-rose-500 duration-200 hover:bg-rose-400 hover:text-zinc-700"
-          onClick={() => dispatch(closeGoalModal())}
+          onClick={() =>
+            type === "Goal"
+              ? dispatch(closeGoalModal())
+              : dispatch(closeConfirmModal())
+          }
         />
         <button
           className="mx-2 h-3 w-3 rounded-full bg-yellow-500 leading-4 text-yellow-500 duration-200 hover:bg-yellow-400 hover:text-zinc-700"

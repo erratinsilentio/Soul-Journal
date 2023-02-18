@@ -8,7 +8,7 @@ export const SelectSection = ({
   onChange,
 }: {
   text: string;
-  options: string;
+  options: any;
   name: string;
   value: any;
   onChange: any;
@@ -27,6 +27,9 @@ export const SelectSection = ({
           <option disabled selected>
             What were you working on today?
           </option>
+          {/* {options.map((goal) => {
+            <option className="">{goal.title}</option>;
+          })} */}
           <option>Programming...</option>
           <option>Running...</option>
         </select>

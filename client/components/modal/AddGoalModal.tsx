@@ -3,7 +3,7 @@ import { Modal } from "./Modal";
 
 export const AddGoalModal = () => {
   return (
-    <Modal>
+    <Modal type="Goal">
       <AddGoalForm />
     </Modal>
   );

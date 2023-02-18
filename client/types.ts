@@ -29,3 +29,5 @@ export interface Goal {
 }
 
 export type Page = "Home" | "Goals" | "Archive" | "Settings";
+
+export type ModalType = "Goal" | "Confirm";

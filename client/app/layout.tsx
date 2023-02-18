@@ -4,6 +4,7 @@ import { Navbar } from "../components/layout/navbar/Navbar";
 import Providers from "./providers";
 import { Notification } from "@/components/notification/Notification";
 import { Montserrat } from "@next/font/google";
+import { ConfirmModal } from "@/components/modal/ConfirmModal";
 
 export const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Notification />
+          <ConfirmModal />
         </Providers>
       </body>
     </html>
