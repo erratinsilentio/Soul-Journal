@@ -1,10 +1,28 @@
 import { Goal, Page } from "@/types";
+import useConfirm from "@/utils/useConfirm";
 import { useGoalMutation } from "@/utils/useGoalMutation";
 import { BsThreeDots } from "react-icons/bs";
 
 export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
+  const { showModal } = useConfirm();
   const { makeGoalDoneMutation, deleteGoalMutation, archiveGoalMutation } =
     useGoalMutation();
+
+  const showConfirmToDelete = async () => {
+    const isConfirmed = await showModal();
+
+    if (isConfirmed) {
+      deleteGoalMutation.mutateAsync(post.id);
+    }
+  };
+
+  const showConfirmToArchive = async () => {
+    const isConfirmed = await showModal();
+
+    if (isConfirmed) {
+      archiveGoalMutation.mutateAsync(post);
+    }
+  };
 
   return (
     <section className="flex flex-row items-center justify-evenly p-5">
@@ -17,15 +35,11 @@ export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
           className="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
         >
           <li>
-            <a onClick={() => deleteGoalMutation.mutateAsync(post.id)}>
-              Delete
-            </a>
+            <a onClick={showConfirmToDelete}>Delete</a>
           </li>
           {page !== "Archive" && (
             <li>
-              <a onClick={() => archiveGoalMutation.mutateAsync(post)}>
-                Archive
-              </a>
+              <a onClick={showConfirmToArchive}>Archive</a>
             </li>
           )}
         </ul>
