@@ -1,4 +1,7 @@
 "use client";
+import { setSession } from "@/store/authSlice";
+import { useAppDispatch } from "@/store/store";
+import { setUser } from "@/store/userSlice";
 import { supabase } from "@/supabase";
 import useConfirm from "@/utils/useConfirm";
 import { deleteUser } from "@/utils/userActions";
@@ -6,10 +9,14 @@ import { useRouter } from "next/navigation";
 
 export const Buttons = ({ id }: { id: string }) => {
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const { showModal } = useConfirm();
 
   async function logOut() {
     let { error } = await supabase.auth.signOut();
+    dispatch(setSession(null));
+    dispatch(setUser(null));
+
     return;
   }
 
