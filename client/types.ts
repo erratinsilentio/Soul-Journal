@@ -1,7 +1,8 @@
 export interface User {
   id: string;
   email: string;
-  streak?: number;
+  username: string;
+  image?: string | null;
 }
 
 export interface Note {

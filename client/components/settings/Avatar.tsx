@@ -1,8 +1,8 @@
-export const Avatar = ({ image }: { image: string | null }) => {
+export const Avatar = ({ image }: { image: string | null | undefined }) => {
   return image ? (
     <div className="avatar">
       <div className="w-24 rounded-full">
-        <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <img src={image} />
       </div>
     </div>
   ) : (
