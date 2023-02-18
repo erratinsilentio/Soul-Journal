@@ -1,71 +1,71 @@
-import { SelectSection } from "./SelectInput";
-import { TextSection } from "./TextInput";
+import { Note } from "@/types";
+import { SelectSection } from "../home/SelectInput";
+import { TextSection } from "../home/TextInput";
 
-export const InputSection = ({ formik }) => {
+export const InputSection = ({ note }: { note: Note }) => {
   return (
     <>
       <TextSection
         name="meditation"
-        value={formik.values["meditation"]}
-        onChange={formik.handleChange}
+        value={note.meditation}
+        onChange={undefined}
         text="🪬 Meditation:"
         placeholder="meditation..."
-        disabled={false}
+        disabled={true}
       />
       <TextSection
         name="dream"
-        value={formik.values["dream"]}
-        onChange={formik.handleChange}
+        value={note.dream}
+        onChange={undefined}
+        disabled={true}
         text="🌙 Dreams:"
         placeholder="dreams..."
-        disabled={false}
       />
       <TextSection
         name="exercise"
-        value={formik.values["exercise"]}
-        onChange={formik.handleChange}
+        value={note.exercise}
+        disabled={true}
+        onChange={undefined}
         text="🏆 Exercise:"
         placeholder="today's workout..."
-        disabled={false}
       />
       <TextSection
         name="awake"
-        value={formik.values["awake"]}
-        onChange={formik.handleChange}
+        value={note.awake}
+        disabled={true}
+        onChange={undefined}
         text="🌞 Awake:"
         placeholder="your day..."
-        disabled={false}
       />
-      <SelectSection
+      {/* <SelectSection
         name="goals"
         value={formik.values["goals"]}
-        onChange={formik.handleChange}
         text="👁️ Goals:"
         options=""
-      />
+      /> */}
       <TextSection
         name="gratitude"
-        value={formik.values["gratitude"]}
-        onChange={formik.handleChange}
+        value={note.gratitude}
+        disabled={true}
+        onChange={undefined}
         text="🌱 I Appreciate..."
         placeholder="the little things..."
-        disabled={false}
       />
       <TextSection
         name="forgiveness"
-        value={formik.values["forgiveness"]}
-        onChange={formik.handleChange}
+        value={note.forgiveness}
+        disabled={true}
+        onChange={undefined}
         text="🎭 I Forgive..."
         placeholder="myself / someone..."
-        disabled={false}
       />
       <TextSection
         name="love"
-        value={formik.values["love"]}
-        onChange={formik.handleChange}
+        value={note.love}
+        disabled={true}
+        onChange={undefined}
         text="🖤 I Love..."
         placeholder="myself / someone / something for..."
-        disabled={false}
       />
     </>
   );

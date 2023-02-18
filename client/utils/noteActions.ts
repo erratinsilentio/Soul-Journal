@@ -44,3 +44,13 @@ export const getAllNotes = async (userID: string) => {
 
   return notes;
 };
+
+export const getSingleNote = async (noteID: string) => {
+  let { data: note, error } = await supabase
+    .from("note")
+    .select()
+    .eq("id", noteID)
+    .single();
+
+  return note;
+};
