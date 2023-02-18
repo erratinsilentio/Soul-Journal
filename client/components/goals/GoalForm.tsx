@@ -19,6 +19,8 @@ export const GoalForm = ({ formik, type }) => {
         type="text"
         placeholder="Goal title..."
         className="input-bordered input my-2 w-full max-w-xs bg-zinc-800 font-light"
+        minLength={3}
+        maxLength={25}
       />
       <textarea
         className="input-bordered textarea my-2 bg-zinc-800 font-light"

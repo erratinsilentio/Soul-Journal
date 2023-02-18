@@ -4,7 +4,8 @@ import { InferType } from "yup";
 export const goalValidationSchema = yup.object({
   title: yup
     .string()
-    .min(5, "Enter minimum 3 characters")
+    .min(3, "Enter minimum 3 characters")
+    .max(25)
     .required("This field is required"),
   description: yup.string(),
   deadline: yup.string().required(),

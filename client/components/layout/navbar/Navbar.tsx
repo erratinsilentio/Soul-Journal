@@ -1,6 +1,7 @@
 "use client";
 
-import { RootState } from "@/store/store";
+import { closeMenu } from "@/store/menuSlice";
+import { RootState, useAppDispatch } from "@/store/store";
 import Link from "next/link";
 import { useState } from "react";
 import { CiStickyNote, CiSettings, CiRead, CiCalendar } from "react-icons/ci";
@@ -15,7 +16,8 @@ export const Navbar = () => {
   const isDark = useSelector((state: RootState) => state.theme);
 
   const [selected, setSelected] = useState<SelectedPath>(null);
-  const style = { color: "text-emerald-500" };
+
+  const dispatch = useAppDispatch();
 
   return (
     <div className={isDark ? "light" : "dark"}>
@@ -30,8 +32,8 @@ export const Navbar = () => {
           <NavbarIcon
             icon={
               <CiStickyNote
-                style={style}
                 className={`${selected === "Home" && "text-emerald-500"}`}
+                onClick={() => dispatch(closeMenu())}
               />
             }
             text="Home"
@@ -42,6 +44,7 @@ export const Navbar = () => {
             icon={
               <CiRead
                 className={`${selected === "Goals" && "text-emerald-500"}`}
+                onClick={() => dispatch(closeMenu())}
               />
             }
             text="Goals"
@@ -52,6 +55,7 @@ export const Navbar = () => {
             icon={
               <CiCalendar
                 className={`${selected === "Archive" && "text-emerald-500"}`}
+                onClick={() => dispatch(closeMenu())}
               />
             }
             text="Archive"
@@ -62,6 +66,7 @@ export const Navbar = () => {
             icon={
               <CiSettings
                 className={`${selected === "Settings" && "text-emerald-500"}`}
+                onClick={() => dispatch(closeMenu())}
               />
             }
             text="Settings"

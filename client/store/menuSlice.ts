@@ -11,9 +11,13 @@ export const menuSlice = createSlice({
       state = !state;
       return state;
     },
+    closeMenu: (state) => {
+      state = false;
+      return state;
+    },
   },
 });
 
-export const { toggleMenu } = menuSlice.actions;
+export const { toggleMenu, closeMenu } = menuSlice.actions;
 
 export default menuSlice.reducer;
