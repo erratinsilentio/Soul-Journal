@@ -73,9 +73,10 @@ export const addGoalFormik = (
       user_id: userID,
     },
     validationSchema: goalValidationSchema,
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       console.log(values);
       addGoalMutation.mutate(values);
+      resetForm();
     },
   });
 
