@@ -44,7 +44,7 @@ export const EditProfileForm = ({ profile }: { profile: User }) => {
         type="text"
         className="input-bordered input-accent input w-full max-w-xs"
         minLength={5}
-        maxLength={11}
+        maxLength={20}
       />
       <button
         type="submit"

@@ -8,7 +8,7 @@ export const loginValidationSchema = yup.object({
 export type loginForm = InferType<typeof loginValidationSchema>;
 
 export const UsernameValidationSchema = yup.object({
-  username: yup.string().min(5).max(11).required("You must enter new username"),
+  username: yup.string().min(5).max(20).required("You must enter new username"),
 });
 
 export type UsernameForm = InferType<typeof UsernameValidationSchema>;
