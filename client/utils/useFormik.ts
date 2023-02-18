@@ -1,12 +1,11 @@
 "use client";
-import { Goal, Note } from "@/types";
+import { Goal, Note, User } from "@/types";
 import { UseMutationResult } from "@tanstack/react-query/build/lib/types";
 import { useFormik } from "formik";
 import { getPostgreSQLDate } from "./getDate";
-import { addGoal, updateGoal } from "./goalActions";
 import { goalValidationSchema } from "./goalSchema";
 import { noteValidationSchema } from "./noteSchema";
-import { loginValidationSchema } from "./userSchema";
+import { loginValidationSchema, UsernameValidationSchema } from "./userSchema";
 
 interface LoginForm {
   mail: string;
@@ -99,6 +98,32 @@ export const updateGoalFormik = (
     onSubmit: async (values) => {
       console.log(values);
       updateGoalMutation.mutate([oldGoal, values]);
+    },
+  });
+
+  return formik;
+};
+
+export const updateProfileFormik = (
+  user: User,
+  updateUserMutation: UseMutationResult<
+    undefined[] | null,
+    unknown,
+    User,
+    unknown
+  >
+) => {
+  const formik = useFormik({
+    enableReinitialize: true,
+    initialValues: {
+      username: user?.username,
+      user_id: user?.id,
+    },
+    validationSchema: UsernameValidationSchema,
+    onSubmit: async (values) => {
+      const newUser = { ...user, username: values.username };
+      console.log(newUser);
+      updateUserMutation.mutate(newUser);
     },
   });
 

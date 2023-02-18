@@ -2,7 +2,6 @@ import { supabase } from "@/supabase";
 import { User } from "@/types";
 import { getAllDoneGoals } from "./goalActions";
 import { getAllNotes } from "./noteActions";
-import { noteValidationSchema } from "./noteSchema";
 
 export const getUser = async (id: string) => {
   const { data: user, error } = await supabase
@@ -13,6 +12,15 @@ export const getUser = async (id: string) => {
 
   console.log(user);
   return user as User;
+};
+
+export const updateUser = async (newUser: User) => {
+  const { data, error } = await supabase
+    .from("users")
+    .update([newUser])
+    .eq("id", newUser.id);
+
+  return data;
 };
 
 export const deleteUser = async (id: string) => {
