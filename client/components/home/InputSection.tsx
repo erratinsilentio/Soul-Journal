@@ -36,13 +36,6 @@ export const InputSection = ({ formik }) => {
         placeholder="your day..."
         disabled={false}
       />
-      <SelectSection
-        name="goals"
-        value={formik.values["goals"]}
-        onChange={formik.handleChange}
-        text="👁️ Goals:"
-        options=""
-      />
       <TextSection
         name="gratitude"
         value={formik.values["gratitude"]}
