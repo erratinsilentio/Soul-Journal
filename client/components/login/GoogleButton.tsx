@@ -12,7 +12,7 @@ export const GoogleButton = () => {
   return (
     <button
       onClick={signInWithGoogle}
-      className="btn-success btn-wide btn relative text-xs"
+      className="btn-success btn-wide btn relative text-xs hover:brightness-110"
     >
       <SiGoogle className="text-lg" />
     </button>
