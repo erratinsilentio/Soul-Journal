@@ -2,6 +2,7 @@ import { Goal, Note } from "@/types";
 import { Tab } from "@headlessui/react";
 import { GoalRow } from "./GoalRow";
 import { NoteRow } from "./NoteRow";
+import { motion } from "framer-motion";
 
 interface ArchiveData {
   Goals: Goal[];
@@ -18,7 +19,12 @@ export default function ArchiveTabs({
   categories: ArchiveData;
 }) {
   return (
-    <div className="min-w-full max-w-md px-2 sm:px-0">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
+      className="min-w-full max-w-md px-2 sm:px-0"
+    >
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl bg-zinc-800 p-1 shadow-2xl shadow-black">
           {Object.keys(categories).map((category) => (
@@ -58,6 +64,6 @@ export default function ArchiveTabs({
           ))}
         </Tab.Panels>
       </Tab.Group>
-    </div>
+    </motion.div>
   );
 }

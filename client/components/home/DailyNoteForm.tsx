@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import { InputSection } from "./InputSection";
 import { SaveButton } from "./SaveButton";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
+import { motion } from "framer-motion";
 
 export const DailyNoteForm = () => {
   const { addNoteMutation, updateNoteMutation } = useNoteMutation();
@@ -27,7 +28,10 @@ export const DailyNoteForm = () => {
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>
-      <form
+      <motion.form
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
         onSubmit={formik.handleSubmit}
         className="min-h-screen rounded-xl bg-opacity-50 bg-gradient-to-b from-zinc-800 via-zinc-800 to-zinc-900 p-8 shadow-2xl shadow-black sm:p-12"
       >
@@ -36,7 +40,7 @@ export const DailyNoteForm = () => {
         </p>
         <InputSection formik={formik} />
         <SaveButton />
-      </form>
+      </motion.form>
     </ErrorLoadingWrapper>
   );
 };
