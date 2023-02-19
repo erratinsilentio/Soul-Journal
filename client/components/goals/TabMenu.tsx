@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useAppSelector } from "@/store/store";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
 import GoalTabs from "../tab/GoalTab";
+import { testGoalData } from "@/utils/emptyStateData";
 
 export const TabMenu = () => {
   const user = useAppSelector((state) => state.user.user);
@@ -18,7 +19,9 @@ export const TabMenu = () => {
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>
-      <GoalTabs categories={goals} />
+      <GoalTabs
+        categories={goals?.["This week"].length ? goals : testGoalData}
+      />
     </ErrorLoadingWrapper>
   );
 };

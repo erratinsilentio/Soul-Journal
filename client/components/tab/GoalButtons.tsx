@@ -24,6 +24,8 @@ export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
     }
   };
 
+  if (!post.user_id) return;
+
   return (
     <section className="flex flex-row items-center justify-evenly p-5">
       <div className="dropdown dropdown-left z-50 mx-5 scale-0 group-hover:scale-100">

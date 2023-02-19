@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const NoteRow = ({ post }) => {
   return (
-    <Link href={`/archive/note/${post.id}`}>
+    <Link href={post.user_id ? `/archive/note/${post.id}` : `/archive`}>
       <li className="relative rounded-md p-3 hover:bg-zinc-700">
         <h3 className="px-2 text-sm font-medium leading-5">✏️ {post.date}</h3>
 
