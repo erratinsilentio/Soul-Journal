@@ -1,11 +1,18 @@
+import { Goal } from "@/types";
 import { Tab } from "@headlessui/react";
 import { GoalRow } from "./GoalRow";
+
+interface Categories {
+  "This Week": Goal[];
+  "This Month": Goal[];
+  "This Year": Goal[];
+}
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function GoalTabs({ categories }) {
+export default function GoalTabs({ categories }: { categories: Categories }) {
   return (
     <div className="min-w-full max-w-md px-2 sm:px-0">
       <Tab.Group>
@@ -35,7 +42,10 @@ export default function GoalTabs({ categories }) {
               )}
             >
               <ul>
-                {posts.map((post) => !post.archived && <GoalRow post={post} />)}
+                {posts.map(
+                  (post: Goal) =>
+                    !post.archived && <GoalRow post={post} page={"Goals"} />
+                )}
               </ul>
             </Tab.Panel>
           ))}

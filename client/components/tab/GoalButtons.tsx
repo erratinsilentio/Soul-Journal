@@ -24,7 +24,7 @@ export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
     }
   };
 
-  if (!post.user_id) return;
+  if (!post.user_id) return <div></div>;
 
   return (
     <section className="flex flex-row items-center justify-evenly p-5">

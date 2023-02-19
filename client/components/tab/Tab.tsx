@@ -1,12 +1,22 @@
+import { Goal, Note } from "@/types";
 import { Tab } from "@headlessui/react";
 import { GoalRow } from "./GoalRow";
 import { NoteRow } from "./NoteRow";
+
+interface ArchiveData {
+  Goals: Goal[];
+  Notes: Note[];
+}
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ArchiveTabs({ categories }) {
+export default function ArchiveTabs({
+  categories,
+}: {
+  categories: ArchiveData;
+}) {
   return (
     <div className="min-w-full max-w-md px-2 sm:px-0">
       <Tab.Group>
@@ -36,7 +46,7 @@ export default function ArchiveTabs({ categories }) {
               )}
             >
               <ul>
-                {posts.map((post) =>
+                {posts.map((post: Goal | Note) =>
                   post.date ? (
                     <NoteRow post={post} key={post.id} />
                   ) : (

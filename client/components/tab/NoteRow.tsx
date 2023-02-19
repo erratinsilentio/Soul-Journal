@@ -1,6 +1,7 @@
+import { Note } from "@/types";
 import Link from "next/link";
 
-export const NoteRow = ({ post }) => {
+export const NoteRow = ({ post }: { post: Note }) => {
   return (
     <Link href={post.user_id ? `/archive/note/${post.id}` : `/archive`}>
       <li className="relative rounded-md p-3 hover:bg-zinc-700">

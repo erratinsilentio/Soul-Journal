@@ -13,7 +13,7 @@ export const TextSection = ({
   placeholder: string;
   name: string;
   value: string;
-  onChange: any;
+  onChange: () => void | undefined;
   disabled: boolean;
 }) => {
   return (

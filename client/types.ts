@@ -26,6 +26,7 @@ export interface Goal {
   deadline: string;
   user_id?: string;
   done: boolean;
+  archived: boolean;
 }
 
 export type Page = "Home" | "Goals" | "Archive" | "Settings";
