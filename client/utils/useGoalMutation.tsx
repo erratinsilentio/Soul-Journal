@@ -1,3 +1,4 @@
+import { closeGoalModal } from "@/store/modalSlice";
 import { setError, setSuccess } from "@/store/notificationSlice";
 import { useAppDispatch } from "@/store/store";
 import { Goal } from "@/types";
@@ -22,6 +23,7 @@ export const useGoalMutation = () => {
       onSuccess: () => {
         queryClient.invalidateQueries(["goals"]);
         dispatch(setSuccess());
+        dispatch(closeGoalModal());
       },
       onError: () => {
         dispatch(setError());
@@ -80,7 +82,7 @@ export const useGoalMutation = () => {
     },
     {
       onSuccess: () => {
-        queryClient.invalidateQueries(["goals"]);
+        queryClient.invalidateQueries(["goals", "daily"]);
         dispatch(setSuccess());
       },
       onError: () => {

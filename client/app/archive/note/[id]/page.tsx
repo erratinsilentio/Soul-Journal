@@ -18,7 +18,7 @@ export default function SingleNotePage({
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>
-      <main className="z-0 min-h-screen min-w-full p-2 sm:p-10">
+      <main className="z-0 min-h-screen min-w-full p-4 sm:p-10">
         <NoteDisplay note={note} />
       </main>
     </ErrorLoadingWrapper>

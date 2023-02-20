@@ -1,11 +1,11 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 
 export type GoalFormType = "add" | "update";
 
 export const GoalForm = ({ formik, type }) => {
   const router = useRouter();
+
   return (
     <form className="flex flex-col py-4 px-8" onSubmit={formik.handleSubmit}>
       <p className="my-3 text-3xl font-medium text-zinc-200">

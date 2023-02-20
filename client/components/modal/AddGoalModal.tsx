@@ -1,10 +1,10 @@
 import { AddGoalForm } from "../goals/AddGoalForm";
-import { Modal } from "./Modal";
+import { GoalWrapper } from "./GoalWrapper";
 
 export const AddGoalModal = () => {
   return (
-    <Modal type="Goal">
+    <GoalWrapper>
       <AddGoalForm />
-    </Modal>
+    </GoalWrapper>
   );
 };
