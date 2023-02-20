@@ -87,7 +87,7 @@ Feel free to play with this code by yourself!
 - [Yup](https://github.com/jquense/yup)
 - [Framer Motion] (https://www.framer.com/motion/)
 
-# Why?
+#### Why?
 
 - I chose to go with Next.js version 13 to get myself familiar with it. Choosing it for a more static website would for sure show me it's true potential - Server Components are very small part of this application. I also very much felt that this is still a beta version. Nonetheless it was a great experience, I enjoyed the new app directory and solely for it's intuitive routing system Next.js was a good choice.
 
