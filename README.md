@@ -85,7 +85,7 @@ Feel free to play with this code by yourself!
 - [Tailwind CSS](https://tailwindcss.com)
 - [Formik](https://formik.org)
 - [Yup](https://github.com/jquense/yup)
-- [FramerMotion] (https://www.framer.com/motion/)
+- [Framer Motion](https://www.framer.com/motion/)
 
 #### Why?
 
