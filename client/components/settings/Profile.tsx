@@ -17,6 +17,8 @@ export const Profile = () => {
     error,
   } = useQuery(["user", user?.id], () => getUser(user?.id));
 
+  console.log(profile);
+
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>
       <motion.section

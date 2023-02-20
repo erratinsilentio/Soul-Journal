@@ -9,7 +9,9 @@ export const Stats = ({ id }: { id: string }) => {
     data: stats,
     isLoading,
     error,
-  } = useQuery(["user", id], () => getNumberOfGoalsAndNotes(id));
+  } = useQuery(["stats", id], () => getNumberOfGoalsAndNotes(id));
+
+  console.log(stats);
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>

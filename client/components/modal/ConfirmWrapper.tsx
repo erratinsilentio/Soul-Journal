@@ -4,8 +4,6 @@ import { useAppSelector } from "@/store/store";
 export const ConfirmWrapper = ({ children }: { children: React.ReactNode }) => {
   const isOpen = useAppSelector((state) => state.modal.confirmModal);
 
-  console.log(isOpen);
-
   return (
     <main
       className={`${
