@@ -1,7 +1,13 @@
-"use client";
+import { motion } from "framer-motion";
+
 export const ErrorAlert = () => {
   return (
-    <div className="alert alert-error fixed bottom-10 left-1/2 z-50 w-80 -translate-x-1/2 shadow-lg">
+    <motion.div
+      initial={{ opacity: 0, bottom: -10 }}
+      animate={{ opacity: 1, bottom: 50 }}
+      transition={{ delay: 0.3 }}
+      className="alert alert-error fixed bottom-10 left-1/2 z-50 w-80 -translate-x-1/2 shadow-lg"
+    >
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -18,6 +24,6 @@ export const ErrorAlert = () => {
         </svg>
         <span>"Error! Task failed successfully."</span>
       </div>
-    </div>
+    </motion.div>
   );
 };

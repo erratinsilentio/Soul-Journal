@@ -39,7 +39,7 @@ export const GoalForm = ({ formik, type }) => {
         type="date"
         className="my-2 rounded-md bg-zinc-800 font-light text-zinc-500"
       />
-      <button type="submit" className="btn-outline btn-accent btn my-4">
+      <button type="submit" className="btn-outline btn-accent btn mt-8">
         {type === "add" ? "Save" : "Save Changes"}
       </button>
       {type === "update" && (

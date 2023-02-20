@@ -1,5 +1,4 @@
 import { Note } from "@/types";
-import { SelectSection } from "../home/SelectInput";
 import { TextSection } from "../home/TextInput";
 
 export const InputSection = ({ note }: { note: Note }) => {
@@ -37,12 +36,6 @@ export const InputSection = ({ note }: { note: Note }) => {
         text="🌞 Awake:"
         placeholder="your day..."
       />
-      {/* <SelectSection
-        name="goals"
-        value={formik.values["goals"]}
-        text="👁️ Goals:"
-        options=""
-      /> */}
       <TextSection
         name="gratitude"
         value={note.gratitude}
