@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://media.giphy.com/media/xT39Dc0hFMPchzM6fS/giphy.gif" alt="Project logo"></a>
+ <img width=200px height=200px src="https://media.giphy.com/media/3oriO1xZwWiTUcyv4s/giphy.gif" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Soul Journal</h3>
@@ -43,7 +43,7 @@ git clone git@github.com:erratinsilentio/Soul-Journal.git
 2. Move to project directory:
 
 ```
-cd /Soul-Journal-/Client
+cd /Soul-Journal/Client
 ```
 
 3. Install dependencies:
@@ -85,6 +85,17 @@ Feel free to play with this code by yourself!
 - [Tailwind CSS](https://tailwindcss.com)
 - [Formik](https://formik.org)
 - [Yup](https://github.com/jquense/yup)
+- [Framer Motion] (https://www.framer.com/motion/)
+
+# Why?
+
+- I chose to go with Next.js version 13 to get myself familiar with it. Choosing it for a more static website would for sure show me it's true potential - Server Components are very small part of this application. I also very much felt that this is still a beta version. Nonetheless it was a great experience, I enjoyed the new app directory and solely for it's intuitive routing system Next.js was a good choice.
+
+- Redux - some might say it's an overkill, but I prefer Redux Toolkit to sharing data through Context. Having one big central store for main data was a good decision, and I will for sure go with Redux in my next projects.
+
+- Tailwind CSS - this was my first time with Tailwind. I tried a few times in the past, but this is the first time it really clicked. One can argue about Tailwind classes making a project less readable and bloated with code. But on the other hand this side effect made me think more about what I put in my CSS. I focused on writing only the code I need to keep things as clean as possible, and in the process I really enjoyed the speed and simplicity of Tailwind. Also, I did not have to think much about exact values and different class names, which also sped up my process.
+
+- Tanstack Query - very simple but very powerful, + great documentation. Makes caching very easy, it was an obvious choice for this project.
 
 <img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.10_cknpwi.png">
 <img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.28_is8i60.png">
