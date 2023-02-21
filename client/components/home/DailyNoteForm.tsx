@@ -21,7 +21,7 @@ export const DailyNoteForm = () => {
 
   const formik = noteActionFormik(
     dailyNote || {},
-    user?.id,
+    user?.id as string,
     addNoteMutation,
     updateNoteMutation
   );

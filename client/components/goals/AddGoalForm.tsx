@@ -7,7 +7,7 @@ export const AddGoalForm = () => {
   const { addGoalMutation } = useGoalMutation();
   const user = useAppSelector((state) => state.user.user);
 
-  const formik = addGoalFormik(user?.id, addGoalMutation);
+  const formik = addGoalFormik(user?.id as string, addGoalMutation);
 
   return <GoalForm formik={formik} type="add" />;
 };

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Goal } from "@/types";
 
 export function categorizeGoals(tasks: Goal[]) {

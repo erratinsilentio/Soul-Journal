@@ -13,7 +13,7 @@ export const TabMenu = () => {
     data: goals,
     isLoading,
     error,
-  } = useQuery(["goals", user?.id], () => getGoals(user?.id), {
+  } = useQuery(["goals", user?.id], () => getGoals(user?.id as string), {
     enabled: !!user?.id,
   });
 

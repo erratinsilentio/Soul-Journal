@@ -13,7 +13,7 @@ export const ArchiveTabs = () => {
     data: notesAndGoals,
     isLoading,
     error,
-  } = useQuery(["daily", user?.id], () => getNotesAndGoals(user?.id));
+  } = useQuery(["daily", user?.id], () => getNotesAndGoals(user?.id as string));
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>

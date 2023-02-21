@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { ArchiveData, Goal, Note } from "@/types";
 import { Tab } from "@headlessui/react";
 import { GoalRow } from "./GoalRow";

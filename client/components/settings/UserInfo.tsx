@@ -1,7 +1,7 @@
-import { User } from "@/types";
+import { Profile } from "@/types";
 import { Avatar } from "./Avatar";
 
-export const UserInfo = ({ user }: { user: User }) => {
+export const UserInfo = ({ user }: { user: Profile }) => {
   return (
     <section className="flex flex-col items-center sm:flex-row sm:items-start">
       <Avatar image={user?.image} />

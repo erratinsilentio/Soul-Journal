@@ -1,11 +1,10 @@
 import { setSession } from "@/store/authSlice";
-import { RootState } from "@/store/store";
-import { setGoals, setNotepad, setUser } from "@/store/userSlice";
+import { setUser } from "@/store/userSlice";
 import { supabase } from "@/supabase";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getGoals, getNotepad, getUser } from "./userActions";
+import { useDispatch } from "react-redux";
+import { getUser } from "./userActions";
 
 export const ProtectedWrapper = ({
   children,
