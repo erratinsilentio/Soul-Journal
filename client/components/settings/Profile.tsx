@@ -15,9 +15,7 @@ export const Profile = () => {
     data: profile,
     isLoading,
     error,
-  } = useQuery(["user", user?.id], () => getUser(user?.id));
-
-  console.log(profile);
+  } = useQuery(["user", user?.id], () => getUser(user?.id as string));
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>

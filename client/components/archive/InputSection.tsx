@@ -7,7 +7,6 @@ export const InputSection = ({ note }: { note: Note }) => {
       <TextSection
         name="meditation"
         value={note.meditation}
-        onChange={undefined}
         text="🪬 Meditation:"
         placeholder="meditation..."
         disabled={true}
@@ -15,7 +14,6 @@ export const InputSection = ({ note }: { note: Note }) => {
       <TextSection
         name="dream"
         value={note.dream}
-        onChange={undefined}
         disabled={true}
         text="🌙 Dreams:"
         placeholder="dreams..."
@@ -24,7 +22,6 @@ export const InputSection = ({ note }: { note: Note }) => {
         name="exercise"
         value={note.exercise}
         disabled={true}
-        onChange={undefined}
         text="🏆 Exercise:"
         placeholder="today's workout..."
       />
@@ -32,7 +29,6 @@ export const InputSection = ({ note }: { note: Note }) => {
         name="awake"
         value={note.awake}
         disabled={true}
-        onChange={undefined}
         text="🌞 Awake:"
         placeholder="your day..."
       />
@@ -40,7 +36,6 @@ export const InputSection = ({ note }: { note: Note }) => {
         name="gratitude"
         value={note.gratitude}
         disabled={true}
-        onChange={undefined}
         text="🌱 I Appreciate..."
         placeholder="the little things..."
       />
@@ -48,7 +43,6 @@ export const InputSection = ({ note }: { note: Note }) => {
         name="forgiveness"
         value={note.forgiveness}
         disabled={true}
-        onChange={undefined}
         text="🎭 I Forgive..."
         placeholder="myself / someone..."
       />
@@ -56,7 +50,6 @@ export const InputSection = ({ note }: { note: Note }) => {
         name="love"
         value={note.love}
         disabled={true}
-        onChange={undefined}
         text="🖤 I Love..."
         placeholder="myself / someone / something for..."
       />

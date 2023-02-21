@@ -13,7 +13,6 @@ export const LoginForm = () => {
       if (error) throw error;
       dispatch(setSuccess());
     } catch (error) {
-      console.log(error.error_description || error.message);
       dispatch(setError());
     }
   };

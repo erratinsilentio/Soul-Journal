@@ -1,5 +1,5 @@
 import { supabase } from "@/supabase";
-import { User } from "@/types";
+import { Profile } from "@/types";
 import { getAllDoneGoals } from "./goalActions";
 import { getAllNotes } from "./noteActions";
 
@@ -11,10 +11,10 @@ export const getUser = async (id: string) => {
     .single();
 
   console.log(user);
-  return user as User;
+  return user as Profile;
 };
 
-export const updateUser = async (newUser: User) => {
+export const updateUser = async (newUser: Profile) => {
   const { data, error } = await supabase
     .from("users")
     .update([newUser])

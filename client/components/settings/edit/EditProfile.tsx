@@ -1,3 +1,4 @@
+import { Loading } from "@/components/loading/Loading";
 import { useAppSelector } from "@/store/store";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
 import { getUser } from "@/utils/userActions";
@@ -11,13 +12,17 @@ export const EditProfilePage = () => {
     data: profile,
     isLoading,
     error,
-  } = useQuery(["user", user?.id], () => getUser(user?.id));
+  } = useQuery(["user", user?.id], () => getUser(user?.id as string));
 
-  return (
-    <ErrorLoadingWrapper loading={isLoading} error={error}>
-      <section className="flex flex-col items-center rounded-xl bg-opacity-50 bg-gradient-to-b from-zinc-800 via-zinc-800 to-zinc-900 p-4 py-12 shadow-2xl shadow-black sm:p-16 md:items-start">
-        <EditProfileForm profile={profile} />
-      </section>
-    </ErrorLoadingWrapper>
-  );
+  if (profile) {
+    return (
+      <ErrorLoadingWrapper loading={isLoading} error={error}>
+        <section className="flex flex-col items-center rounded-xl bg-opacity-50 bg-gradient-to-b from-zinc-800 via-zinc-800 to-zinc-900 p-4 py-12 shadow-2xl shadow-black sm:p-16 md:items-start">
+          <EditProfileForm profile={profile} />
+        </section>
+      </ErrorLoadingWrapper>
+    );
+  } else {
+    return <Loading />;
+  }
 };

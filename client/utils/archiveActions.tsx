@@ -1,3 +1,4 @@
+import { ArchiveData } from "@/types";
 import { getAllGoals } from "./goalActions";
 import { getAllNotes } from "./noteActions";
 
@@ -8,5 +9,5 @@ export const getNotesAndGoals = async (userID: string) => {
     Notes: notes,
     Goals: goals,
   };
-  return notesAndGoals;
+  return notesAndGoals as ArchiveData;
 };

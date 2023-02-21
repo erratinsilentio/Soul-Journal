@@ -1,4 +1,5 @@
 "use client";
+import { Goal } from "@/types";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
 import { getGoal } from "@/utils/goalActions";
 import { updateGoalFormik } from "@/utils/useFormik";
@@ -15,7 +16,7 @@ export const UpdateGoalForm = ({ id }: { id: string }) => {
     error,
   } = useQuery(["daily", id], () => getGoal(id));
 
-  const formik = updateGoalFormik(oldGoal, updateGoalMutation);
+  const formik = updateGoalFormik(oldGoal as Goal, updateGoalMutation);
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>

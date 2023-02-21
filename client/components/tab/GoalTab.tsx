@@ -1,14 +1,8 @@
-import { Goal } from "@/types";
+import { Categories, Goal } from "@/types";
 import { Tab } from "@headlessui/react";
 import { GoalRow } from "./GoalRow";
 
-interface Categories {
-  "This Week": Goal[];
-  "This Month": Goal[];
-  "This Year": Goal[];
-}
-
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 

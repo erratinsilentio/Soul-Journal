@@ -1,4 +1,4 @@
-export interface User {
+export interface Profile {
   id: string;
   email: string;
   username: string;
@@ -25,8 +25,19 @@ export interface Goal {
   description: string;
   deadline: string;
   user_id?: string;
-  done: boolean;
-  archived: boolean;
+  done?: boolean;
+  archived?: boolean;
+}
+
+export interface Categories {
+  "This week": Goal[];
+  "This month": Goal[];
+  "This year": Goal[];
+}
+
+export interface ArchiveData {
+  Goals: Goal[];
+  Notes: Note[];
 }
 
 export type Page = "Home" | "Goals" | "Archive" | "Settings";

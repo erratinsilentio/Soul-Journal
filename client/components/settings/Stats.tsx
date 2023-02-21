@@ -11,8 +11,6 @@ export const Stats = ({ id }: { id: string }) => {
     error,
   } = useQuery(["stats", id], () => getNumberOfGoalsAndNotes(id));
 
-  console.log(stats);
-
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>
       <section className="stats mt-7 py-4">

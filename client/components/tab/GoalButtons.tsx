@@ -11,7 +11,7 @@ export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
   const showConfirmToDelete = async () => {
     const isConfirmed = await showModal();
 
-    if (isConfirmed) {
+    if (isConfirmed && post.id) {
       deleteGoalMutation.mutateAsync(post.id);
     }
   };

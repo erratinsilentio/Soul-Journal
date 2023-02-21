@@ -8,7 +8,7 @@ export const getGoals = async (userID: string) => {
     .select()
     .eq("user_id", userID);
 
-  let categorizedGoals = categorizeGoals(data);
+  let categorizedGoals = categorizeGoals(data as Goal[]);
 
   return categorizedGoals;
 };
@@ -60,7 +60,7 @@ export const updateGoal = async (oldGoal: Goal, newGoal: Goal) => {
     .select()
     .single();
 
-  return data;
+  return data as Goal;
 };
 
 export const makeGoalDone = async (goal: Goal) => {
@@ -73,7 +73,7 @@ export const makeGoalDone = async (goal: Goal) => {
     .select()
     .single();
 
-  return data;
+  return data as Goal;
 };
 
 export const archiveGoal = async (goal: Goal) => {
@@ -86,7 +86,7 @@ export const archiveGoal = async (goal: Goal) => {
     .select()
     .single();
 
-  return data;
+  return data as Goal;
 };
 
 export const deleteGoal = async (goalID: string) => {

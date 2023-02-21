@@ -1,9 +1,17 @@
 "use client";
+import { Goal } from "@/types";
+import { FormikProps } from "formik";
 import { useRouter } from "next/navigation";
 
 export type GoalFormType = "add" | "update";
 
-export const GoalForm = ({ formik, type }) => {
+export const GoalForm = ({
+  formik,
+  type,
+}: {
+  formik: FormikProps<Goal>;
+  type: GoalFormType;
+}) => {
   const router = useRouter();
 
   return (

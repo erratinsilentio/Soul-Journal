@@ -1,7 +1,5 @@
 import { Error } from "@/components/error/Error";
 import { Loading } from "@/components/loading/Loading";
-import { User } from "@/types";
-import { JsxElement } from "typescript";
 
 export const ErrorLoadingWrapper = ({
   children,

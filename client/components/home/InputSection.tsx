@@ -1,7 +1,8 @@
-import { SelectSection } from "./SelectInput";
+import { Note } from "@/types";
+import { FormikProps } from "formik";
 import { TextSection } from "./TextInput";
 
-export const InputSection = ({ formik }) => {
+export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
   return (
     <>
       <TextSection

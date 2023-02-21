@@ -8,7 +8,7 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setSession: (state, action: PayloadAction<Session>) => {
+    setSession: (state, action: PayloadAction<Session | null>) => {
       state = action.payload;
       return state;
     },

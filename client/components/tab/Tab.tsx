@@ -1,15 +1,10 @@
-import { Goal, Note } from "@/types";
+import { ArchiveData, Goal, Note } from "@/types";
 import { Tab } from "@headlessui/react";
 import { GoalRow } from "./GoalRow";
 import { NoteRow } from "./NoteRow";
 import { motion } from "framer-motion";
 
-interface ArchiveData {
-  Goals: Goal[];
-  Notes: Note[];
-}
-
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 

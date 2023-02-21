@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ChangeEvent } from "react";
 
 export const TextSection = ({
   text,
@@ -13,7 +13,7 @@ export const TextSection = ({
   placeholder: string;
   name: string;
   value: string;
-  onChange: () => void | undefined;
+  onChange?: (e: ChangeEvent) => void | undefined;
   disabled: boolean;
 }) => {
   return (

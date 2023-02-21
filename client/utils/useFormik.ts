@@ -1,5 +1,5 @@
 "use client";
-import { Goal, Note, User } from "@/types";
+import { Goal, Note, Profile } from "@/types";
 import { UseMutationResult } from "@tanstack/react-query/build/lib/types";
 import { useFormik } from "formik";
 import { getPostgreSQLDate } from "./getDate";
@@ -34,7 +34,7 @@ export const noteActionFormik = (
   addNoteMutation: UseMutationResult<any, unknown, Note, unknown>,
   updateNoteMutation: UseMutationResult<any, unknown, [Note, Note], unknown>
 ) => {
-  const formik = useFormik({
+  const formik = useFormik<Note>({
     enableReinitialize: true,
     initialValues: {
       date: getPostgreSQLDate(),
@@ -64,7 +64,7 @@ export const addGoalFormik = (
   userID: string,
   addGoalMutation: UseMutationResult<any, unknown, Goal, unknown>
 ) => {
-  const formik = useFormik({
+  const formik = useFormik<Goal>({
     enableReinitialize: true,
     initialValues: {
       title: "",
@@ -87,7 +87,7 @@ export const updateGoalFormik = (
   oldGoal: Goal,
   updateGoalMutation: UseMutationResult<any, unknown, [Goal, Goal], unknown>
 ) => {
-  const formik = useFormik({
+  const formik = useFormik<Goal>({
     enableReinitialize: true,
     initialValues: {
       title: oldGoal?.title,
@@ -106,11 +106,11 @@ export const updateGoalFormik = (
 };
 
 export const updateProfileFormik = (
-  user: User,
+  user: Profile,
   updateUserMutation: UseMutationResult<
     undefined[] | null,
     unknown,
-    User,
+    Profile,
     unknown
   >
 ) => {

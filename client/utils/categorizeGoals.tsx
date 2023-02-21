@@ -1,6 +1,6 @@
 import { Goal } from "@/types";
 
-export function categorizeGoals(tasks) {
+export function categorizeGoals(tasks: Goal[]) {
   let sorted = {
     "This week": [],
     "This month": [],
