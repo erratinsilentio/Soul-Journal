@@ -22,6 +22,7 @@ export const useGoalMutation = () => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["goals"]);
+        queryClient.invalidateQueries(["daily"]);
         dispatch(setSuccess());
         dispatch(closeGoalModal());
       },
@@ -38,6 +39,7 @@ export const useGoalMutation = () => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["goals"]);
+        queryClient.invalidateQueries(["daily"]);
         dispatch(setSuccess());
       },
       onError: () => {
@@ -53,6 +55,7 @@ export const useGoalMutation = () => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["goals"]);
+        queryClient.invalidateQueries(["daily"]);
         dispatch(setSuccess());
       },
       onError: () => {
@@ -68,6 +71,7 @@ export const useGoalMutation = () => {
     {
       onSuccess: () => {
         queryClient.invalidateQueries(["goals"]);
+        queryClient.invalidateQueries(["daily"]);
         dispatch(setSuccess());
       },
       onError: () => {
@@ -82,7 +86,8 @@ export const useGoalMutation = () => {
     },
     {
       onSuccess: () => {
-        queryClient.invalidateQueries(["goals", "daily"]);
+        queryClient.invalidateQueries(["goals"]);
+        queryClient.invalidateQueries(["daily"]);
         dispatch(setSuccess());
       },
       onError: () => {

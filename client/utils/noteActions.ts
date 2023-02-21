@@ -4,7 +4,6 @@ import { getPostgreSQLDate } from "./getDate";
 
 export const checkIfDailyNoteExists = async (userID: any) => {
   const currentDate = getPostgreSQLDate();
-
   const { data, error } = await supabase
     .from("note")
     .select()
