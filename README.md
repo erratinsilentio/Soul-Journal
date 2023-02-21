@@ -71,7 +71,7 @@ Feel free to play with this code by yourself!
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-- Still in progress...
+Visit https://soul-journal.vercel.app/ for live deployment.
 
 ## ⛏️ Technologies <a name = "built_using"></a>
 
