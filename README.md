@@ -28,6 +28,8 @@
 
 This project is still a work in progress. It is a journaling and habit tracking schema I came up with some time ago for personal development. The whole idea is that you have to fill out every field with at least minimal information. This makes you more conscious about your habits or stoic principles of life, even if you missed a day of training, you have to reflect on the fact that you missed it. You can also add and edit goals with a certain deadline, which are sorted by week, month and year.
 
+<img width=200px height=200px src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzQzN2FjZGRiNzE0N2MxNWVhMzQxYzAxNDAyY2QwMmRjYWRmZTljOSZjdD1n/089XUrXO7PnzTjARFU/giphy.gif" alt="Project logo">
+
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for a ready-to-use site, with which you can play.
