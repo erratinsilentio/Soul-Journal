@@ -99,5 +99,17 @@ Visit https://soul-journal.vercel.app/ for live deployment.
 
 - Tanstack Query - very simple but very powerful, + great documentation. Makes caching very easy, it was an obvious choice for this project.
 
-<img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.10_cknpwi.png">
-<img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.28_is8i60.png">
+#### What's next?
+
+I prefer having one polished project, to five unfinished. That's why I still consider it a work in progress. There are a few things and technologies im interested in, that are a good fit. Mobile version and RWS is also something that requires additional work. Apart from that:
+
+- Testing using Jest or Cypress
+
+- Containerizing with Docker
+
+- Refactoring parts of code with reusability in mind
+
+- Additional form & error handling
+
+  <img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.10_cknpwi.png">
+  <img src="https://res.cloudinary.com/dlj4gyfwy/image/upload/v1676638203/souljournal/Zrzut_ekranu_2023-02-17_o_13.49.28_is8i60.png">
