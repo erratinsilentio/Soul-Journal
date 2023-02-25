@@ -1,8 +1,8 @@
 "use client";
 import { RootState, useAppSelector } from "@/store/store";
-import { checkIfDailyNoteExists } from "@/utils/noteActions";
-import { noteActionFormik } from "@/utils/useFormik";
-import { useNoteMutation } from "@/utils/useNoteMutation";
+import { checkIfDailyNoteExists } from "@/utils/api/noteActions";
+import { noteActionFormik } from "@/utils/formik/useFormik";
+import { useNoteMutation } from "@/utils/hooks/useNoteMutation";
 import { useQuery } from "@tanstack/react-query";
 import { InputSection } from "./InputSection";
 import { SaveButton } from "./SaveButton";

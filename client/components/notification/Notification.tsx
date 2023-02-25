@@ -1,32 +1,31 @@
 "use client";
-
+import { useEffect } from "react";
 import { setNull } from "@/store/notificationSlice";
-import { RootState } from "@/store/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppSelector } from "@/store/store";
+import { useDispatch } from "react-redux";
 import { ErrorAlert } from "./ErrorAlert";
 import { SuccessAlert } from "./SuccessAlert";
 
 export const Notification = () => {
-  const notificationStatus = useSelector(
-    (state: RootState) => state.notification
+  const notificationStatus = useAppSelector(
+    (state) => state.notification.notification
   );
   const dispatch = useDispatch();
 
-  if (notificationStatus === "Success") {
-    setTimeout(() => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
       dispatch(setNull());
     }, 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [notificationStatus]);
 
+  if (notificationStatus === "Success") {
     return <SuccessAlert />;
   }
-
   if (notificationStatus === "Error") {
-    setTimeout(() => {
-      dispatch(setNull());
-    }, 3000);
-
     return <ErrorAlert />;
   }
-
   return null;
 };

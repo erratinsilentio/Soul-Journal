@@ -9,8 +9,8 @@ import {
   deleteGoal,
   makeGoalDone,
   updateGoal,
-} from "./goalActions";
-import { queryClient } from "./QueryClient";
+} from "../api/goalActions";
+import { queryClient } from "../QueryClient";
 
 export const useGoalMutation = () => {
   const dispatch = useAppDispatch();

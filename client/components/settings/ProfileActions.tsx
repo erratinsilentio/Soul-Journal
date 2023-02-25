@@ -3,11 +3,11 @@ import { setSession } from "@/store/authSlice";
 import { useAppDispatch } from "@/store/store";
 import { setUser } from "@/store/userSlice";
 import { supabase } from "@/supabase";
-import useConfirm from "@/utils/useConfirm";
-import { deleteUser } from "@/utils/userActions";
+import useConfirm from "@/utils/hooks/useConfirm";
+import { deleteUser } from "@/utils/api/userActions";
 import { useRouter } from "next/navigation";
 
-export const Buttons = ({ id }: { id: string }) => {
+export const ProfileActions = ({ id }: { id: string }) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { showModal } = useConfirm();
@@ -20,7 +20,7 @@ export const Buttons = ({ id }: { id: string }) => {
     return;
   }
 
-  const showConfirmToLogin = async () => {
+  const showConfirmToLogout = async () => {
     const isConfirmed = await showModal();
 
     if (isConfirmed) {
@@ -48,7 +48,7 @@ export const Buttons = ({ id }: { id: string }) => {
       >
         Edit Profile
       </button>
-      <button className="btn my-2 sm:w-80" onClick={showConfirmToLogin}>
+      <button className="btn my-2 sm:w-80" onClick={showConfirmToLogout}>
         Log out
       </button>
       <button className="btn my-2 sm:w-80" onClick={showConfirmToDelete}>

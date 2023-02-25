@@ -1,6 +1,7 @@
 "use client";
 import { useAppSelector } from "@/store/store";
-import { getNotesAndGoals } from "@/utils/archiveActions";
+import { ArchiveData } from "@/types";
+import { getNotesAndGoals } from "@/utils/api/archiveActions";
 import { testArchiveData } from "@/utils/emptyStateData";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
 import { useQuery } from "@tanstack/react-query";
@@ -13,7 +14,17 @@ export const ArchiveTabs = () => {
     data: notesAndGoals,
     isLoading,
     error,
-  } = useQuery(["daily", user?.id], () => getNotesAndGoals(user?.id as string));
+  } = useQuery(
+    ["daily", user?.id],
+    () => {
+      if (user?.id) {
+        return getNotesAndGoals(user.id);
+      }
+    },
+    {
+      placeholderData: testArchiveData,
+    }
+  );
 
   return (
     <ErrorLoadingWrapper loading={isLoading} error={error}>

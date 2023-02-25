@@ -1,5 +1,5 @@
 "use client";
-import useConfirm from "@/utils/useConfirm";
+import useConfirm from "@/utils/hooks/useConfirm";
 import { ConfirmWrapper } from "./ConfirmWrapper";
 
 export const ConfirmModal = () => {

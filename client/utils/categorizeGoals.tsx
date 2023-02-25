@@ -1,8 +1,13 @@
-// @ts-nocheck
 import { Goal } from "@/types";
 
+type SortedGoals = {
+  "This week": Goal[];
+  "This month": Goal[];
+  "This year": Goal[];
+};
+
 export function categorizeGoals(tasks: Goal[]) {
-  let sorted = {
+  let sorted: SortedGoals = {
     "This week": [],
     "This month": [],
     "This year": [],

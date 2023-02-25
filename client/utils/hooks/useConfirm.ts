@@ -1,5 +1,5 @@
 import { closeConfirmModal, openConfirmModal } from "@/store/modalSlice";
-import { useAppDispatch, useAppSelector } from "../store/store";
+import { useAppDispatch, useAppSelector } from "../../store/store";
 
 let resolveCallback: (arg0: boolean) => void;
 

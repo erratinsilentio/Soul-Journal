@@ -1,7 +1,7 @@
 "use client";
 import { setError, setSuccess } from "@/store/notificationSlice";
 import { supabase } from "@/supabase";
-import { loginActionFormik } from "@/utils/useFormik";
+import { loginActionFormik } from "@/utils/formik/useFormik";
 import { useDispatch } from "react-redux";
 
 export const LoginForm = () => {

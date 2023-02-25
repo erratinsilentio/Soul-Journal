@@ -2,8 +2,8 @@ import { setError, setSuccess } from "@/store/notificationSlice";
 import { useAppDispatch } from "@/store/store";
 import { Profile } from "@/types";
 import { queryClient } from "@/utils/QueryClient";
-import { updateProfileFormik } from "@/utils/useFormik";
-import { updateUser } from "@/utils/userActions";
+import { updateProfileFormik } from "@/utils/formik/useFormik";
+import { updateUser } from "@/utils/api/userActions";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 

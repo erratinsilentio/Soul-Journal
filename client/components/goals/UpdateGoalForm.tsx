@@ -1,9 +1,9 @@
 "use client";
 import { Goal } from "@/types";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
-import { getGoal } from "@/utils/goalActions";
-import { updateGoalFormik } from "@/utils/useFormik";
-import { useGoalMutation } from "@/utils/useGoalMutation";
+import { getGoal } from "@/utils/api/goalActions";
+import { updateGoalFormik } from "@/utils/formik/useFormik";
+import { useGoalMutation } from "@/utils/hooks/useGoalMutation";
 import { useQuery } from "@tanstack/react-query";
 import { GoalForm } from "./GoalForm";
 

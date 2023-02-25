@@ -1,6 +1,6 @@
 import { Goal, Page } from "@/types";
-import useConfirm from "@/utils/useConfirm";
-import { useGoalMutation } from "@/utils/useGoalMutation";
+import useConfirm from "@/utils/hooks/useConfirm";
+import { useGoalMutation } from "@/utils/hooks/useGoalMutation";
 import { BsThreeDots } from "react-icons/bs";
 
 export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
@@ -28,7 +28,7 @@ export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
 
   return (
     <section className="flex flex-row items-center justify-evenly p-5">
-      <div className="dropdown dropdown-left z-50 mx-5 scale-0 group-hover:scale-100">
+      <div className="dropdown-left dropdown z-50 mx-5 scale-0 group-hover:scale-100">
         <label tabIndex={0}>
           <BsThreeDots />
         </label>
@@ -49,8 +49,8 @@ export const GoalButtons = ({ post, page }: { post: Goal; page: Page }) => {
       <input
         type="checkbox"
         className="checkbox-success checkbox scale-0 group-hover:scale-100"
-        checked={post.done ? true : false}
-        disabled={page === "Archive" ? true : false}
+        checked={post.done}
+        disabled={page === "Archive"}
         onClick={() => makeGoalDoneMutation.mutateAsync(post)}
       />
     </section>

@@ -1,5 +1,7 @@
 "use client";
 
+import { ChangeEvent } from "react";
+
 export const SelectSection = ({
   text,
   options,
@@ -8,10 +10,10 @@ export const SelectSection = ({
   onChange,
 }: {
   text: string;
-  options: any;
+  options: { option: string; value: string }[];
   name: string;
-  value: any;
-  onChange: any;
+  value: string;
+  onChange: (e: ChangeEvent) => void;
 }) => {
   return (
     <>

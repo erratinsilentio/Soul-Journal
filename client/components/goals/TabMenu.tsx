@@ -1,5 +1,5 @@
 "use client";
-import { getGoals } from "@/utils/goalActions";
+import { getGoals } from "@/utils/api/goalActions";
 import { useQuery } from "@tanstack/react-query";
 import { useAppSelector } from "@/store/store";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";

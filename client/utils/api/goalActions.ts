@@ -1,6 +1,6 @@
 import { supabase } from "@/supabase";
 import { Goal } from "@/types";
-import { categorizeGoals } from "./categorizeGoals";
+import { categorizeGoals } from "../categorizeGoals";
 
 export const getGoals = async (userID: string) => {
   const { data, error } = await supabase

@@ -4,7 +4,7 @@ import { supabase } from "@/supabase";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getUser } from "./userActions";
+import { getUser } from "./api/userActions";
 
 export const ProtectedWrapper = ({
   children,

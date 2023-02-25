@@ -38,7 +38,9 @@ export default function GoalTabs({ categories }: { categories: Categories }) {
               <ul>
                 {posts.map(
                   (post: Goal) =>
-                    !post.archived && <GoalRow post={post} page={"Goals"} />
+                    !post.archived && (
+                      <GoalRow key={post.id} post={post} page={"Goals"} />
+                    )
                 )}
               </ul>
             </Tab.Panel>

@@ -1,23 +1,24 @@
-// @ts-nocheck
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type Notification = "Success" | "Error" | null;
-const initialState: Notification = null;
+type Notification = { notification: "Success" | "Error" | null };
+const initialState: Notification = {
+  notification: null,
+};
 
 export const notificationSlice = createSlice({
   name: "notification",
   initialState,
   reducers: {
     setSuccess: (state) => {
-      state = "Success";
+      state.notification = "Success";
       return state;
     },
     setError: (state) => {
-      state = "Error";
+      state.notification = "Error";
       return state;
     },
     setNull: (state) => {
-      state = null;
+      state.notification = null;
       return state;
     },
   },

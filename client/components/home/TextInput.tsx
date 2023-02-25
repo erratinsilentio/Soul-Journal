@@ -7,14 +7,14 @@ export const TextSection = ({
   name,
   value,
   onChange,
-  disabled,
+  disabled = false,
 }: {
   text: string;
   placeholder: string;
   name: string;
   value: string;
   onChange?: (e: ChangeEvent) => void | undefined;
-  disabled: boolean;
+  disabled?: boolean;
 }) => {
   return (
     <>

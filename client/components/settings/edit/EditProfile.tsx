@@ -1,7 +1,7 @@
 import { Loading } from "@/components/loading/Loading";
 import { useAppSelector } from "@/store/store";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
-import { getUser } from "@/utils/userActions";
+import { getUser } from "@/utils/api/userActions";
 import { useQuery } from "@tanstack/react-query";
 import { EditProfileForm } from "./EditProfileForm";
 

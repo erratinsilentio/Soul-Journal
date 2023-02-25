@@ -1,7 +1,7 @@
 "use client";
 
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
-import { getNumberOfGoalsAndNotes } from "@/utils/userActions";
+import { getNumberOfGoalsAndNotes } from "@/utils/api/userActions";
 import { useQuery } from "@tanstack/react-query";
 
 export const Stats = ({ id }: { id: string }) => {

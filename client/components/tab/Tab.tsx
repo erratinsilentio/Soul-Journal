@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { ArchiveData, Goal, Note } from "@/types";
 import { Tab } from "@headlessui/react";
 import { GoalRow } from "./GoalRow";
@@ -7,6 +6,10 @@ import { motion } from "framer-motion";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
+}
+
+function isNote(arg: any): arg is Note {
+  return arg.date !== undefined;
 }
 
 export default function ArchiveTabs({
@@ -48,13 +51,13 @@ export default function ArchiveTabs({
               )}
             >
               <ul>
-                {posts.map((post: Goal | Note) =>
-                  post.date ? (
-                    <NoteRow post={post} key={post.id} />
-                  ) : (
-                    <GoalRow post={post} page="Archive" key={post.id} />
-                  )
-                )}
+                {posts.map((post: Goal | Note) => {
+                  if (isNote(post)) {
+                    return <NoteRow post={post} key={post.id} />;
+                  } else {
+                    return <GoalRow post={post} page="Archive" key={post.id} />;
+                  }
+                })}
               </ul>
             </Tab.Panel>
           ))}

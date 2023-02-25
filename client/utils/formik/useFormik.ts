@@ -2,10 +2,13 @@
 import { Goal, Note, Profile } from "@/types";
 import { UseMutationResult } from "@tanstack/react-query/build/lib/types";
 import { useFormik } from "formik";
-import { getPostgreSQLDate } from "./getDate";
-import { goalValidationSchema } from "./goalSchema";
-import { noteValidationSchema } from "./noteSchema";
-import { loginValidationSchema, UsernameValidationSchema } from "./userSchema";
+import { getPostgreSQLDate } from "../getDate";
+import { goalValidationSchema } from "../schemas/goalSchema";
+import { noteValidationSchema } from "../schemas/noteSchema";
+import {
+  loginValidationSchema,
+  UsernameValidationSchema,
+} from "../schemas/userSchema";
 
 interface LoginForm {
   mail: string;

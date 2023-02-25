@@ -1,6 +1,6 @@
 import { supabase } from "@/supabase";
 import { Note } from "@/types";
-import { getPostgreSQLDate } from "./getDate";
+import { getPostgreSQLDate } from "../getDate";
 
 export const checkIfDailyNoteExists = async (userID: any) => {
   const currentDate = getPostgreSQLDate();

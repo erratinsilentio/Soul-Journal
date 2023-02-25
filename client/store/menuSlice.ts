@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type MenuState = true | false;
-const initialState: MenuState = false;
+const initialState: boolean = false;
 
 export const menuSlice = createSlice({
   name: "menu",

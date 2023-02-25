@@ -2,8 +2,8 @@ import { setError, setSuccess } from "@/store/notificationSlice";
 import { useAppDispatch } from "@/store/store";
 import { Note } from "@/types";
 import { useMutation } from "@tanstack/react-query";
-import { addNote, updateNote } from "./noteActions";
-import { queryClient } from "./QueryClient";
+import { addNote, updateNote } from "../api/noteActions";
+import { queryClient } from "../QueryClient";
 
 export const useNoteMutation = () => {
   const dispatch = useAppDispatch();

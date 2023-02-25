@@ -2,7 +2,7 @@
 import { InputSection } from "@/components/archive/InputSection";
 import { NoteDisplay } from "@/components/archive/NoteDisplay";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
-import { getSingleNote } from "@/utils/noteActions";
+import { getSingleNote } from "@/utils/api/noteActions";
 import { useQuery } from "@tanstack/react-query";
 
 export default function SingleNotePage({

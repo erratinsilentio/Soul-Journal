@@ -11,7 +11,6 @@ export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
         onChange={formik.handleChange}
         text="🪬 Meditation:"
         placeholder="meditation..."
-        disabled={false}
       />
       <TextSection
         name="dream"
@@ -19,7 +18,6 @@ export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
         onChange={formik.handleChange}
         text="🌙 Dreams:"
         placeholder="dreams..."
-        disabled={false}
       />
       <TextSection
         name="exercise"
@@ -27,7 +25,6 @@ export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
         onChange={formik.handleChange}
         text="🏆 Exercise:"
         placeholder="today's workout..."
-        disabled={false}
       />
       <TextSection
         name="awake"
@@ -35,7 +32,6 @@ export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
         onChange={formik.handleChange}
         text="🌞 Awake:"
         placeholder="your day..."
-        disabled={false}
       />
       <TextSection
         name="gratitude"
@@ -43,7 +39,6 @@ export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
         onChange={formik.handleChange}
         text="🌱 I Appreciate..."
         placeholder="the little things..."
-        disabled={false}
       />
       <TextSection
         name="forgiveness"
@@ -51,7 +46,6 @@ export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
         onChange={formik.handleChange}
         text="🎭 I Forgive..."
         placeholder="myself / someone..."
-        disabled={false}
       />
       <TextSection
         name="love"
@@ -59,7 +53,6 @@ export const InputSection = ({ formik }: { formik: FormikProps<Note> }) => {
         onChange={formik.handleChange}
         text="🖤 I Love..."
         placeholder="myself / someone / something for..."
-        disabled={false}
       />
     </>
   );

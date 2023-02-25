@@ -1,9 +1,9 @@
 "use client";
 import { useAppSelector } from "@/store/store";
 import { ErrorLoadingWrapper } from "@/utils/ErrorLoadingWrapper";
-import { getUser } from "@/utils/userActions";
+import { getUser } from "@/utils/api/userActions";
 import { useQuery } from "@tanstack/react-query";
-import { Buttons } from "./Buttons";
+import { ProfileActions } from "./ProfileActions";
 import { Stats } from "./Stats";
 import { UserInfo } from "./UserInfo";
 import { motion } from "framer-motion";
@@ -29,7 +29,7 @@ export const Profile = () => {
         >
           <UserInfo user={profile} />
           <Stats id={user?.id} />
-          <Buttons id={user?.id} />
+          <ProfileActions id={user?.id} />
         </motion.section>
       </ErrorLoadingWrapper>
     );
